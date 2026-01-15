@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Loan | Quick Lending</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">QuickLending</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="apply.html">Apply Now</a>
+                <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Application Form -->
+    <section class="application-form">
+        <div class="container">
+            <div class="form-header">
+                <h1>Loan Application</h1>
+                <p>Fill out the form below to apply for your loan. We'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form id="loanForm">
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Personal Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth *</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-home"></i> Address Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="address">Street Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-money-bill-wave"></i> Loan Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount ($) *</label>
+                            <input type="number" id="loanAmount" name="loanAmount" min="1000" max="100000" required>
+                            <div class="amount-slider">
+                                <input type="range" id="amountRange" min="1000" max="100000" step="1000" value="10000">
+                                <div class="range-labels">
+                                    <span>$1,000</span>
+                                    <span>$100,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loanPurpose">Loan Purpose *</label>
+                            <select id="loanPurpose" name="loanPurpose" required>
+                                <option value="">Select Purpose</option>
+                                <option value="debt_consolidation">Debt Consolidation</option>
+                                <option value="home_improvement">Home Improvement</option>
+                                <option value="business">Business Investment</option>
+                                <option value="education">Education</option>
+                                <option value="medical">Medical Expenses</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="employmentStatus">Employment Status *</label>
+                            <select id="employmentStatus" name="employmentStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self_employed">Self-Employed</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="student">Student</option>
+                                <option value="retired">Retired</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="annualIncome">Annual Income ($) *</label>
+                            <input type="number" id="annualIncome" name="annualIncome" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-file-alt"></i> Additional Information</h3>
+                    <div class="form-group full-width">
+                        <label for="additionalInfo">Additional Information (Optional)</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Any additional information you'd like to share..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>QuickLending</h3>
+                    <p>Providing fast and reliable lending solutions since 2015.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="apply.html">Apply Now</a>
+                    <a href="admin.html">Admin Dashboard</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> kingrollex4@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (305) 574-1900</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 QuickLending. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
