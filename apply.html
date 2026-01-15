@@ -6,940 +6,156 @@
     <title>Apply for Loan | SwiftFund</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-bolt"></i> SwiftFund
-            </a>
+            <a href="index.html" class="logo">SwiftFund</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="index.html#features">Features</a>
-                <a href="index.html#how-it-works">How It Works</a>
-                <a href="index.html#loans">Loan Types</a>
-                <a href="apply.html" class="active">Apply Now</a>
-                <div class="auth-buttons">
-                    <a href="login.html" class="btn-login">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </a>
-                    <a href="register.html" class="btn-register">
-                        <i class="fas fa-user-plus"></i> Register
-                    </a>
-                </div>
-                <a href="admin.html" class="admin-link">
-                    <i class="fas fa-lock"></i> Admin
-                </a>
+                <a href="apply.html">Apply Now</a>
+                <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a>
             </div>
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </nav>
 
     <!-- Application Form -->
     <section class="application-form">
         <div class="container">
-            <!-- Form Progress -->
-            <div class="form-progress">
-                <div class="progress-steps">
-                    <div class="progress-step active" data-step="1">
-                        <div class="step-number">1</div>
-                        <div class="step-label">Account</div>
-                    </div>
-                    <div class="progress-step" data-step="2">
-                        <div class="step-number">2</div>
-                        <div class="step-label">Personal</div>
-                    </div>
-                    <div class="progress-step" data-step="3">
-                        <div class="step-number">3</div>
-                        <div class="step-label">Financial</div>
-                    </div>
-                    <div class="progress-step" data-step="4">
-                        <div class="step-number">4</div>
-                        <div class="step-label">Banking</div>
-                    </div>
-                    <div class="progress-step" data-step="5">
-                        <div class="step-number">5</div>
-                        <div class="step-label">Review</div>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 20%"></div>
+            <div class="form-header">
+                <h1>Loan Application Form</h1>
+                <p>Fill out all details below. All information is secure.</p>
+            </div>
+            
+            <!-- NETLIFY FORM - THIS SENDS TO NETLIFY -->
+            <form id="loanForm" name="loan-application" method="POST" netlify netlify-honeypot="bot-field" data-netlify="true">
+                <!-- Hidden Netlify fields -->
+                <input type="hidden" name="form-name" value="loan-application">
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Personal Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Application Form -->
-            <div class="application-card">
-                <div class="form-header">
-                    <h1>Complete Your Loan Application</h1>
-                    <p>Fill all sections carefully to ensure quick approval</p>
+                <div class="form-section">
+                    <h3><i class="fas fa-home"></i> Address</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
                 </div>
 
-                <form id="loanApplicationForm" class="form-sections">
-                    <!-- Step 1: Account Information -->
-                    <div class="form-section step-1 active">
-                        <h3><i class="fas fa-user-circle"></i> Account Information</h3>
-                        <p class="section-description">Create your SwiftFund account to track your application</p>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="userId" class="required">User ID</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-id-card"></i>
-                                    <input type="text" id="userId" name="userId" 
-                                           placeholder="Choose your user ID" required
-                                           pattern="[A-Za-z0-9_]{6,20}"
-                                           title="6-20 characters, letters, numbers and underscore only">
-                                </div>
-                                <small class="hint">6-20 characters, letters, numbers and underscore only</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="required">Email Address</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <input type="email" id="email" name="email" 
-                                           placeholder="Enter your email" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="required">Password</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-lock"></i>
-                                    <input type="password" id="password" name="password" 
-                                           placeholder="Create a strong password" required
-                                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                                           title="Minimum 8 characters, with uppercase, lowercase, number and special character">
-                                    <button type="button" class="toggle-password" onclick="togglePassword('password')">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                                <div class="password-strength">
-                                    <div class="strength-bar">
-                                        <div class="strength-fill weak"></div>
-                                    </div>
-                                    <span class="strength-text">Password strength: Weak</span>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="confirmPassword" class="required">Confirm Password</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-lock"></i>
-                                    <input type="password" id="confirmPassword" name="confirmPassword" 
-                                           placeholder="Re-enter your password" required>
-                                    <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
+                <div class="form-section">
+                    <h3><i class="fas fa-money-bill-wave"></i> Loan Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount ($) *</label>
+                            <input type="number" id="loanAmount" name="loanAmount" min="1000" max="100000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loanPurpose">Loan Purpose *</label>
+                            <select id="loanPurpose" name="loanPurpose" required>
+                                <option value="debt_consolidation">Debt Consolidation</option>
+                                <option value="home_improvement">Home Improvement</option>
+                                <option value="business">Business</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="employmentStatus">Employment Status *</label>
+                            <select id="employmentStatus" name="employmentStatus" required>
+                                <option value="employed">Employed</option>
+                                <option value="self_employed">Self-Employed</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="annualIncome">Annual Income ($) *</label>
+                            <input type="number" id="annualIncome" name="annualIncome" required>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Step 2: Personal Information -->
-                    <div class="form-section step-2">
-                        <h3><i class="fas fa-user"></i> Personal Information</h3>
-                        <p class="section-description">Tell us about yourself for identity verification</p>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="fullName" class="required">Full Legal Name</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" id="fullName" name="fullName" 
-                                           placeholder="As per government ID" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone" class="required">Phone Number</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-phone"></i>
-                                    <input type="tel" id="phone" name="phone" 
-                                           placeholder="(123) 456-7890" required
-                                           pattern="[0-9]{10}">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="dob" class="required">Date of Birth</label>
-                                <input type="date" id="dob" name="dob" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="ssn" class="required">Social Security Number</label>
-                                <input type="text" id="ssn" name="ssn" 
-                                       placeholder="XXX-XX-XXXX" required
-                                       pattern="\d{3}-\d{2}-\d{4}">
-                                <small class="hint">Format: 123-45-6789</small>
-                            </div>
-
-                            <div class="form-group full-width">
-                                <label for="address" class="required">Residential Address</label>
-                                <input type="text" id="address" name="address" 
-                                       placeholder="Street address" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="city" class="required">City</label>
-                                <input type="text" id="city" name="city" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="state" class="required">State</label>
-                                <select id="state" name="state" required>
-                                    <option value="">Select State</option>
-                                    <!-- States will be populated by JavaScript -->
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="zipCode" class="required">ZIP Code</label>
-                                <input type="text" id="zipCode" name="zipCode" 
-                                       pattern="\d{5}" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="maritalStatus" class="required">Marital Status</label>
-                                <select id="maritalStatus" name="maritalStatus" required>
-                                    <option value="">Select Status</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
-                                    <option value="widowed">Widowed</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="dependents">Number of Dependents</label>
-                                <select id="dependents" name="dependents">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4+</option>
-                                </select>
-                            </div>
+                <div class="form-section">
+                    <h3><i class="fas fa-university"></i> Banking Information</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="bankName">Bank Name *</label>
+                            <input type="text" id="bankName" name="bankName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="routingNumber">Routing Number *</label>
+                            <input type="text" id="routingNumber" name="routingNumber" pattern="\d{9}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="accountNumber">Account Number *</label>
+                            <input type="text" id="accountNumber" name="accountNumber" required>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Step 3: Financial Information -->
-                    <div class="form-section step-3">
-                        <h3><i class="fas fa-chart-line"></i> Financial Information</h3>
-                        <p class="section-description">Provide details about your income and employment</p>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="employmentStatus" class="required">Employment Status</label>
-                                <select id="employmentStatus" name="employmentStatus" required>
-                                    <option value="">Select Status</option>
-                                    <option value="employed">Employed Full-time</option>
-                                    <option value="part_time">Employed Part-time</option>
-                                    <option value="self_employed">Self-Employed</option>
-                                    <option value="unemployed">Unemployed</option>
-                                    <option value="retired">Retired</option>
-                                    <option value="student">Student</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="employerName">Employer Name</label>
-                                <input type="text" id="employerName" name="employerName" 
-                                       placeholder="Company name">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="jobTitle">Job Title</label>
-                                <input type="text" id="jobTitle" name="jobTitle" 
-                                       placeholder="Your position">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="employmentYears">Years at Current Job</label>
-                                <select id="employmentYears" name="employmentYears">
-                                    <option value="0">Less than 1 year</option>
-                                    <option value="1">1 year</option>
-                                    <option value="2">2 years</option>
-                                    <option value="3">3 years</option>
-                                    <option value="5">5+ years</option>
-                                    <option value="10">10+ years</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="annualIncome" class="required">Annual Gross Income</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-dollar-sign"></i>
-                                    <input type="number" id="annualIncome" name="annualIncome" 
-                                           placeholder="50000" min="10000" step="1000" required>
-                                </div>
-                                <small class="hint">Before taxes and deductions</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="otherIncome">Other Monthly Income</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-dollar-sign"></i>
-                                    <input type="number" id="otherIncome" name="otherIncome" 
-                                           placeholder="Additional income">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="monthlyRent">Monthly Housing Payment</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-home"></i>
-                                    <input type="number" id="monthlyRent" name="monthlyRent" 
-                                           placeholder="Rent or mortgage">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="loanAmount" class="required">Desired Loan Amount</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                    <input type="number" id="loanAmount" name="loanAmount" 
-                                           min="1000" max="100000" step="1000" 
-                                           placeholder="25000" required>
-                                </div>
-                                <div class="amount-slider">
-                                    <input type="range" id="amountRange" min="1000" max="100000" 
-                                           step="1000" value="25000">
-                                    <div class="range-labels">
-                                        <span>$1,000</span>
-                                        <span>$100,000</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="loanPurpose" class="required">Loan Purpose</label>
-                                <select id="loanPurpose" name="loanPurpose" required>
-                                    <option value="">Select Purpose</option>
-                                    <option value="debt_consolidation">Debt Consolidation</option>
-                                    <option value="home_improvement">Home Improvement</option>
-                                    <option value="business">Business Investment</option>
-                                    <option value="education">Education Expenses</option>
-                                    <option value="medical">Medical Bills</option>
-                                    <option value="auto">Auto Purchase</option>
-                                    <option value="wedding">Wedding</option>
-                                    <option value="vacation">Vacation</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="loanTerm" class="required">Preferred Loan Term</label>
-                                <select id="loanTerm" name="loanTerm" required>
-                                    <option value="">Select Term</option>
-                                    <option value="12">12 Months</option>
-                                    <option value="24">24 Months</option>
-                                    <option value="36">36 Months</option>
-                                    <option value="48">48 Months</option>
-                                    <option value="60">60 Months</option>
-                                </select>
-                            </div>
+                <div class="form-section">
+                    <h3><i class="fas fa-key"></i> Account Creation</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="userId">User ID *</label>
+                            <input type="text" id="userId" name="userId" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Step 4: Banking Information -->
-                    <div class="form-section step-4">
-                        <h3><i class="fas fa-university"></i> Banking Information</h3>
-                        <p class="section-description">Provide your bank details for funds disbursement</p>
-                        
-                        <div class="bank-details-grid">
-                            <div class="form-group">
-                                <label for="bankName" class="required">Bank Name</label>
-                                <input type="text" id="bankName" name="bankName" 
-                                       placeholder="e.g., Chase Bank" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="accountType" class="required">Account Type</label>
-                                <select id="accountType" name="accountType" required>
-                                    <option value="">Select Type</option>
-                                    <option value="checking">Checking Account</option>
-                                    <option value="savings">Savings Account</option>
-                                    <option value="business">Business Account</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="routingNumber" class="required">Routing Number</label>
-                                <input type="text" id="routingNumber" name="routingNumber" 
-                                       maxlength="9" pattern="\d{9}"
-                                       placeholder="9-digit number" required>
-                                <small class="hint">9-digit ABA routing number</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="accountNumber" class="required">Account Number</label>
-                                <div class="input-with-icon">
-                                    <input type="password" id="accountNumber" name="accountNumber" 
-                                           placeholder="Your account number" required>
-                                    <button type="button" class="toggle-password" onclick="togglePassword('accountNumber')">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                                <small class="hint">Your account number will be encrypted</small>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="confirmAccountNumber" class="required">Confirm Account Number</label>
-                                <div class="input-with-icon">
-                                    <input type="password" id="confirmAccountNumber" name="confirmAccountNumber" 
-                                           placeholder="Re-enter account number" required>
-                                    <button type="button" class="toggle-password" onclick="togglePassword('confirmAccountNumber')">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="bankPhone">Bank Phone Number</label>
-                                <input type="tel" id="bankPhone" name="bankPhone" 
-                                       placeholder="Bank customer service">
-                            </div>
-                        </div>
-
-                        <div class="upload-section">
-                            <h4><i class="fas fa-file-upload"></i> Document Upload</h4>
-                            <p class="section-description">Upload required documents for verification</p>
-                            
-                            <div class="upload-area">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Drag & drop files here or click to browse</p>
-                                <div class="file-input">
-                                    <input type="file" id="documentUpload" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png">
-                                    <label for="documentUpload" class="file-label">
-                                        <i class="fas fa-folder-open"></i> Choose Files
-                                    </label>
-                                </div>
-                                <small class="hint">Max file size: 5MB each. Accepted: PDF, JPG, PNG</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 5: Review & Submit -->
-                    <div class="form-section step-5">
-                        <h3><i class="fas fa-check-circle"></i> Review & Submit</h3>
-                        <p class="section-description">Review your information before submission</p>
-                        
-                        <div class="review-summary">
-                            <div class="summary-section">
-                                <h4>Account Information</h4>
-                                <div class="summary-grid">
-                                    <div class="summary-item">
-                                        <span>User ID:</span>
-                                        <span id="reviewUserId"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Email:</span>
-                                        <span id="reviewEmail"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="summary-section">
-                                <h4>Personal Information</h4>
-                                <div class="summary-grid">
-                                    <div class="summary-item">
-                                        <span>Full Name:</span>
-                                        <span id="reviewFullName"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Phone:</span>
-                                        <span id="reviewPhone"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Address:</span>
-                                        <span id="reviewAddress"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="summary-section">
-                                <h4>Financial Information</h4>
-                                <div class="summary-grid">
-                                    <div class="summary-item">
-                                        <span>Annual Income:</span>
-                                        <span id="reviewIncome"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Loan Amount:</span>
-                                        <span id="reviewLoanAmount"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Loan Purpose:</span>
-                                        <span id="reviewPurpose"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="summary-section">
-                                <h4>Banking Information</h4>
-                                <div class="summary-grid">
-                                    <div class="summary-item">
-                                        <span>Bank Name:</span>
-                                        <span id="reviewBankName"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Account Type:</span>
-                                        <span id="reviewAccountType"></span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <span>Routing Number:</span>
-                                        <span id="reviewRoutingNumber"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group full-width checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
-                                    I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and 
-                                    <a href="privacy.html" target="_blank">Privacy Policy</a> *
-                                </label>
-
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="bankingConsent" name="bankingConsent" required>
-                                    I authorize SwiftFund to verify my banking information and process transactions *
-                                </label>
-
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="creditCheck" name="creditCheck" required>
-                                    I authorize SwiftFund to perform a credit check for loan approval *
-                                </label>
-
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="electronicConsent" name="electronicConsent" required>
-                                    I consent to receive electronic communications and documents *
-                                </label>
-
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="marketingConsent" name="marketingConsent">
-                                    I would like to receive marketing communications and updates
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Form Navigation -->
-                    <div class="form-actions">
-                        <button type="button" class="btn-prev" onclick="previousStep()">
-                            <i class="fas fa-arrow-left"></i> Previous
-                        </button>
-                        <button type="button" class="btn-next" onclick="nextStep()">
-                            Next <i class="fas fa-arrow-right"></i>
-                        </button>
-                        <button type="submit" class="btn-submit" style="display: none;">
-                            <i class="fas fa-paper-plane"></i> Submit Application
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit to Netlify
+                    </button>
+                </div>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
-                        <i class="fas fa-bolt"></i> SwiftFund
-                    </a>
-                    <p class="footer-description">
-                        Revolutionizing digital lending with instant approvals and competitive rates.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="index.html#loans">Loan Types</a></li>
-                        <li><a href="index.html#calculator">EMI Calculator</a></li>
-                        <li><a href="apply.html">Apply Now</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="security.html">Security</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> support@swiftfund.com</p>
-                        <p><i class="fas fa-phone"></i> (888) 555-SWIFT</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 SwiftFund. All rights reserved.</p>
-            </div>
+            <p>&copy; 2024 SwiftFund. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Multi-step form functionality
-        let currentStep = 1;
-        const totalSteps = 5;
-
-        // Initialize states dropdown
-        const states = [
-            'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
-            'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
-            'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
-            'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
-            'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
-        ];
-
-        const stateSelect = document.getElementById('state');
-        states.forEach(state => {
-            const option = document.createElement('option');
-            option.value = state;
-            option.textContent = state;
-            stateSelect.appendChild(option);
-        });
-
-        // Password strength checker
-        const passwordInput = document.getElementById('password');
-        const strengthFill = document.querySelector('.strength-fill');
-        const strengthText = document.querySelector('.strength-text');
-
-        passwordInput.addEventListener('input', function() {
-            const password = this.value;
-            let strength = 0;
-            
-            // Length check
-            if (password.length >= 8) strength++;
-            // Uppercase check
-            if (/[A-Z]/.test(password)) strength++;
-            // Lowercase check
-            if (/[a-z]/.test(password)) strength++;
-            // Number check
-            if (/[0-9]/.test(password)) strength++;
-            // Special character check
-            if (/[^A-Za-z0-9]/.test(password)) strength++;
-            
-            // Update UI
-            strengthFill.className = 'strength-fill';
-            if (strength <= 2) {
-                strengthFill.classList.add('weak');
-                strengthText.textContent = 'Password strength: Weak';
-            } else if (strength <= 4) {
-                strengthFill.classList.add('medium');
-                strengthText.textContent = 'Password strength: Medium';
-            } else {
-                strengthFill.classList.add('strong');
-                strengthText.textContent = 'Password strength: Strong';
-            }
-        });
-
-        // Toggle password visibility
-        function togglePassword(fieldId) {
-            const field = document.getElementById(fieldId);
-            const toggleBtn = field.parentElement.querySelector('.toggle-password i');
-            
-            if (field.type === 'password') {
-                field.type = 'text';
-                toggleBtn.classList.remove('fa-eye');
-                toggleBtn.classList.add('fa-eye-slash');
-            } else {
-                field.type = 'password';
-                toggleBtn.classList.remove('fa-eye-slash');
-                toggleBtn.classList.add('fa-eye');
-            }
-        }
-
-        // Loan amount slider sync
-        const loanAmountInput = document.getElementById('loanAmount');
-        const amountRange = document.getElementById('amountRange');
-
-        if (loanAmountInput && amountRange) {
-            amountRange.addEventListener('input', function() {
-                loanAmountInput.value = this.value;
-            });
-            
-            loanAmountInput.addEventListener('input', function() {
-                amountRange.value = this.value;
-            });
-        }
-
-        // Step navigation
-        function nextStep() {
-            if (!validateStep(currentStep)) return;
-            
-            document.querySelector(`.step-${currentStep}`).classList.remove('active');
-            currentStep++;
-            
-            if (currentStep > totalSteps) currentStep = totalSteps;
-            
-            document.querySelector(`.step-${currentStep}`).classList.add('active');
-            updateProgress();
-            updateNavigation();
-            if (currentStep === totalSteps) updateReview();
-        }
-
-        function previousStep() {
-            document.querySelector(`.step-${currentStep}`).classList.remove('active');
-            currentStep--;
-            
-            if (currentStep < 1) currentStep = 1;
-            
-            document.querySelector(`.step-${currentStep}`).classList.add('active');
-            updateProgress();
-            updateNavigation();
-        }
-
-        function validateStep(step) {
-            const currentSection = document.querySelector(`.step-${step}`);
-            const inputs = currentSection.querySelectorAll('input[required], select[required]');
-            let isValid = true;
-
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'var(--danger)';
-                } else {
-                    input.style.borderColor = 'var(--gray-light)';
-                }
-            });
-
-            // Step-specific validations
-            if (step === 1) {
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
-                
-                if (password !== confirmPassword) {
-                    alert('Passwords do not match!');
-                    isValid = false;
-                }
-            }
-
-            if (step === 4) {
-                const accountNumber = document.getElementById('accountNumber').value;
-                const confirmAccountNumber = document.getElementById('confirmAccountNumber').value;
-                
-                if (accountNumber !== confirmAccountNumber) {
-                    alert('Account numbers do not match!');
-                    isValid = false;
-                }
-            }
-
-            if (!isValid) {
-                alert('Please fill all required fields correctly.');
-            }
-
-            return isValid;
-        }
-
-        function updateProgress() {
-            // Update progress bar
-            const progressFill = document.querySelector('.progress-fill');
-            const progressPercent = ((currentStep - 1) / (totalSteps - 1)) * 100;
-            progressFill.style.width = `${progressPercent}%`;
-            
-            // Update step indicators
-            document.querySelectorAll('.progress-step').forEach((step, index) => {
-                if (index + 1 <= currentStep) {
-                    step.classList.add('active');
-                } else {
-                    step.classList.remove('active');
-                }
-            });
-        }
-
-        function updateNavigation() {
-            const prevBtn = document.querySelector('.btn-prev');
-            const nextBtn = document.querySelector('.btn-next');
-            const submitBtn = document.querySelector('.btn-submit');
-            
-            prevBtn.style.display = currentStep === 1 ? 'none' : 'flex';
-            nextBtn.style.display = currentStep === totalSteps ? 'none' : 'flex';
-            submitBtn.style.display = currentStep === totalSteps ? 'flex' : 'none';
-        }
-
-        function updateReview() {
-            // Update review summary
-            document.getElementById('reviewUserId').textContent = document.getElementById('userId').value;
-            document.getElementById('reviewEmail').textContent = document.getElementById('email').value;
-            document.getElementById('reviewFullName').textContent = document.getElementById('fullName').value;
-            document.getElementById('reviewPhone').textContent = document.getElementById('phone').value;
-            document.getElementById('reviewAddress').textContent = 
-                `${document.getElementById('address').value}, ${document.getElementById('city').value}, ${document.getElementById('state').value} ${document.getElementById('zipCode').value}`;
-            document.getElementById('reviewIncome').textContent = '$' + parseInt(document.getElementById('annualIncome').value).toLocaleString();
-            document.getElementById('reviewLoanAmount').textContent = '$' + parseInt(document.getElementById('loanAmount').value).toLocaleString();
-            
-            const purposeSelect = document.getElementById('loanPurpose');
-            const purposeText = purposeSelect.options[purposeSelect.selectedIndex].text;
-            document.getElementById('reviewPurpose').textContent = purposeText;
-            
-            document.getElementById('reviewBankName').textContent = document.getElementById('bankName').value;
-            
-            const accountTypeSelect = document.getElementById('accountType');
-            const accountTypeText = accountTypeSelect.options[accountTypeSelect.selectedIndex].text;
-            document.getElementById('reviewAccountType').textContent = accountTypeText;
-            
-            document.getElementById('reviewRoutingNumber').textContent = 
-                document.getElementById('routingNumber').value.slice(0, 3) + '****' + document.getElementById('routingNumber').value.slice(-2);
-        }
-
-        // Form submission
-        document.getElementById('loanApplicationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Check all required checkboxes
-            const requiredCheckboxes = ['termsAgreement', 'bankingConsent', 'creditCheck', 'electronicConsent'];
-            const allChecked = requiredCheckboxes.every(id => document.getElementById(id).checked);
-            
-            if (!allChecked) {
-                alert('Please agree to all required terms and authorizations.');
-                return;
-            }
-            
-            // Collect form data
-            const formData = {
-                // Account Info
-                userId: document.getElementById('userId').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value,
-                
-                // Personal Info
-                fullName: document.getElementById('fullName').value,
-                phone: document.getElementById('phone').value,
-                dob: document.getElementById('dob').value,
-                ssn: document.getElementById('ssn').value,
-                address: document.getElementById('address').value,
-                city: document.getElementById('city').value,
-                state: document.getElementById('state').value,
-                zipCode: document.getElementById('zipCode').value,
-                maritalStatus: document.getElementById('maritalStatus').value,
-                dependents: document.getElementById('dependents').value,
-                
-                // Financial Info
-                employmentStatus: document.getElementById('employmentStatus').value,
-                employerName: document.getElementById('employerName').value,
-                jobTitle: document.getElementById('jobTitle').value,
-                employmentYears: document.getElementById('employmentYears').value,
-                annualIncome: document.getElementById('annualIncome').value,
-                otherIncome: document.getElementById('otherIncome').value,
-                monthlyRent: document.getElementById('monthlyRent').value,
-                loanAmount: document.getElementById('loanAmount').value,
-                loanPurpose: document.getElementById('loanPurpose').value,
-                loanTerm: document.getElementById('loanTerm').value,
-                
-                // Banking Info
-                bankName: document.getElementById('bankName').value,
-                accountType: document.getElementById('accountType').value,
-                routingNumber: document.getElementById('routingNumber').value,
-                accountNumber: encrypt(document.getElementById('accountNumber').value),
-                bankPhone: document.getElementById('bankPhone').value,
-                
-                // System Info
-                applicationId: generateApplicationId(),
-                dateApplied: new Date().toISOString().split('T')[0],
-                status: 'pending',
-                timestamp: new Date().toISOString()
-            };
-
-            // Save to localStorage
-            saveApplication(formData);
-            
-            // Create user account
-            createUserAccount(formData);
-            
-            // Show success message
-            alert(`Application submitted successfully!\n\nYour Application ID: ${formData.applicationId}\n\nYou will receive a confirmation email shortly.`);
-            
-            // Redirect to dashboard
-            localStorage.setItem('currentUser', JSON.stringify({
-                userId: formData.userId,
-                fullName: formData.fullName,
-                email: formData.email
-            }));
-            
-            window.location.href = 'user-dashboard.html';
-        });
-
-        // Simple encryption function
-        function encrypt(text) {
-            return btoa(text).split('').reverse().join('');
-        }
-
-        // Generate application ID
-        function generateApplicationId() {
-            const timestamp = Date.now().toString().slice(-6);
-            const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-            return 'SWIFT-' + timestamp + random;
-        }
-
-        // Save application to localStorage
-        function saveApplication(application) {
-            let applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
-            applications.push(application);
-            localStorage.setItem('loanApplications', JSON.stringify(applications));
-        }
-
-        // Create user account
-        function createUserAccount(formData) {
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            
-            // Remove sensitive data before saving
-            const user = {
-                id: generateUserId(),
-                userId: formData.userId,
-                email: formData.email,
-                password: formData.password,
-                fullName: formData.fullName,
-                phone: formData.phone,
-                dob: formData.dob,
-                ssn: formData.ssn,
-                address: formData.address,
-                city: formData.city,
-                state: formData.state,
-                zipCode: formData.zipCode,
-                bankName: formData.bankName,
-                accountType: formData.accountType,
-                routingNumber: formData.routingNumber,
-                accountNumber: formData.accountNumber,
-                dateRegistered: new Date().toISOString().split('T')[0],
-                status: 'active'
-            };
-            
-            users.push(user);
-            localStorage.setItem('users', JSON.stringify(users));
-        }
-
-        function generateUserId() {
-            return 'USR-' + Date.now().toString().slice(-6) + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-        }
-
-        // Initialize form
-        updateProgress();
-        updateNavigation();
-        
-        // Set max date for DOB (18 years ago)
-        const dobInput = document.getElementById('dob');
-        const today = new Date();
-        const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
-        dobInput.max = minDate.toISOString().split('T')[0];
-    </script>
 </body>
 </html>
