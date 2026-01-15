@@ -6,34 +6,20 @@
     <title>SwiftFund | Instant Loan Approval</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-bolt"></i> SwiftFund
-            </a>
+            <a href="index.html" class="logo">SwiftFund</a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
-                <a href="#loans">Loan Types</a>
-                <a href="#calculator">Calculator</a>
-                <a href="apply.html" class="apply-nav">Apply Now</a>
-                <div class="auth-buttons">
-                    <a href="login.html" class="btn-login">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </a>
-                    <a href="register.html" class="btn-register">
-                        <i class="fas fa-user-plus"></i> Register
-                    </a>
-                </div>
-                <a href="admin.html" class="admin-link">
-                    <i class="fas fa-lock"></i> Admin
-                </a>
+                <a href="apply.html">Apply Now</a>
+                <a href="login.html">Login</a>
+                <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a>
             </div>
             <button class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -45,190 +31,34 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Get <span class="highlight">Instant Loans</span> Up To $100,000</h1>
-                <p class="subtitle">Fast, secure, and hassle-free loan approvals in 24 hours. No hidden fees, no lengthy paperwork.</p>
+                <h1>Get The Loan You Need In <span class="highlight">24 Hours</span></h1>
+                <p>Fast, secure, and transparent lending solutions. No hidden fees.</p>
                 <div class="hero-buttons">
-                    <a href="apply.html" class="btn-primary">
-                        <i class="fas fa-rocket"></i> Apply Instantly
-                    </a>
-                    <a href="#calculator" class="btn-secondary">
-                        <i class="fas fa-calculator"></i> Calculate EMI
-                    </a>
-                </div>
-                <div class="hero-features">
-                    <div class="feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Bank-Level Security</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-clock"></i>
-                        <span>24-Hour Approval</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-percent"></i>
-                        <span>Low Interest Rates</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="loan-calculator-card">
-                    <h3><i class="fas fa-calculator"></i> Quick EMI Calculator</h3>
-                    <div class="calculator-form">
-                        <div class="calc-input">
-                            <label>Loan Amount</label>
-                            <div class="range-container">
-                                <input type="range" id="calcAmount" min="1000" max="100000" step="1000" value="25000">
-                                <div class="range-values">
-                                    <span>$1K</span>
-                                    <span id="amountValue">$25,000</span>
-                                    <span>$100K</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="calc-input">
-                            <label>Tenure (Months)</label>
-                            <div class="range-container">
-                                <input type="range" id="calcTenure" min="3" max="60" step="1" value="24">
-                                <div class="range-values">
-                                    <span>3M</span>
-                                    <span id="tenureValue">24 Months</span>
-                                    <span>60M</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="calc-input">
-                            <label>Interest Rate</label>
-                            <div class="range-container">
-                                <input type="range" id="calcInterest" min="5" max="20" step="0.5" value="8.5">
-                                <div class="range-values">
-                                    <span>5%</span>
-                                    <span id="interestValue">8.5%</span>
-                                    <span>20%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="calc-result">
-                            <div class="result-item">
-                                <span>Monthly EMI</span>
-                                <span id="emiValue" class="result-value">$1,125.50</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Total Interest</span>
-                                <span id="totalInterest" class="result-value">$2,012.00</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Total Amount</span>
-                                <span id="totalAmount" class="result-value">$27,012.00</span>
-                            </div>
-                        </div>
-                        <a href="apply.html" class="btn-calc">
-                            <i class="fas fa-paper-plane"></i> Apply with This Amount
-                        </a>
-                    </div>
+                    <a href="apply.html" class="btn-primary">Apply Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features -->
     <section id="features" class="features">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Choose SwiftFund?</h2>
-                <p class="section-subtitle">Experience the future of digital lending</p>
-            </div>
+            <h2 class="section-title">Why Choose SwiftFund</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon digital">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>100% Digital Process</h3>
-                    <p>Complete your loan application online in minutes. No branch visits required.</p>
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Approval</h3>
+                    <p>Get approved within 24 hours</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon instant">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Instant Approval</h3>
-                    <p>Get loan approval within hours with our AI-powered verification system.</p>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Bank-level security</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon secure">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Bank-Level Security</h3>
-                    <p>256-bit SSL encryption protects your personal and financial information.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon flexible">
-                        <i class="fas fa-sliders-h"></i>
-                    </div>
-                    <h3>Flexible Repayment</h3>
-                    <p>Choose from multiple repayment options that fit your financial situation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Loan Types -->
-    <section id="loans" class="loan-types">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Loan Products</h2>
-                <p class="section-subtitle">Find the perfect loan for your needs</p>
-            </div>
-            <div class="loans-grid">
-                <div class="loan-card">
-                    <div class="loan-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Home Improvement</h3>
-                    <p>Up to $50,000 for renovations and repairs</p>
-                    <ul class="loan-features">
-                        <li><i class="fas fa-check"></i> 5.99% - 12.99% APR</li>
-                        <li><i class="fas fa-check"></i> 12-60 Months Term</li>
-                        <li><i class="fas fa-check"></i> No Collateral Required</li>
-                    </ul>
-                    <a href="apply.html?type=home" class="btn-loan">Apply Now</a>
-                </div>
-                <div class="loan-card">
-                    <div class="loan-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Business Loan</h3>
-                    <p>Up to $100,000 for business expansion</p>
-                    <ul class="loan-features">
-                        <li><i class="fas fa-check"></i> 6.99% - 14.99% APR</li>
-                        <li><i class="fas fa-check"></i> 6-36 Months Term</li>
-                        <li><i class="fas fa-check"></i> Fast Business Approval</li>
-                    </ul>
-                    <a href="apply.html?type=business" class="btn-loan">Apply Now</a>
-                </div>
-                <div class="loan-card">
-                    <div class="loan-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Education Loan</h3>
-                    <p>Up to $75,000 for tuition and expenses</p>
-                    <ul class="loan-features">
-                        <li><i class="fas fa-check"></i> 4.99% - 9.99% APR</li>
-                        <li><i class="fas fa-check"></i> 12-120 Months Term</li>
-                        <li><i class="fas fa-check"></i> Deferred Payment Option</li>
-                    </ul>
-                    <a href="apply.html?type=education" class="btn-loan">Apply Now</a>
-                </div>
-                <div class="loan-card">
-                    <div class="loan-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Auto Loan</h3>
-                    <p>Up to $80,000 for new or used vehicles</p>
-                    <ul class="loan-features">
-                        <li><i class="fas fa-check"></i> 3.99% - 8.99% APR</li>
-                        <li><i class="fas fa-check"></i> 24-84 Months Term</li>
-                        <li><i class="fas fa-check"></i> Quick Vehicle Approval</li>
-                    </ul>
-                    <a href="apply.html?type=auto" class="btn-loan">Apply Now</a>
+                    <i class="fas fa-percent"></i>
+                    <h3>Low Rates</h3>
+                    <p>Competitive interest rates</p>
                 </div>
             </div>
         </div>
@@ -237,51 +67,22 @@
     <!-- How It Works -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">Get your loan in 3 simple steps</p>
-            </div>
-            <div class="steps-container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Create Account</h3>
-                        <p>Register in 2 minutes with your basic details and verify your identity</p>
-                    </div>
+                    <h3>Apply Online</h3>
+                    <p>Fill our simple form</p>
                 </div>
-                <div class="connector"></div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Complete Application</h3>
-                        <p>Fill the detailed application form with personal, financial & banking details</p>
-                    </div>
+                    <h3>Get Approved</h3>
+                    <p>24-hour approval</p>
                 </div>
-                <div class="connector"></div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Get Funds</h3>
-                        <p>Receive approval and get funds directly in your bank account within 24 hours</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Get Your Loan?</h2>
-                <p>Join 50,000+ satisfied customers who found financial freedom with SwiftFund</p>
-                <div class="cta-buttons">
-                    <a href="register.html" class="btn-primary">
-                        <i class="fas fa-user-plus"></i> Create Free Account
-                    </a>
-                    <a href="apply.html" class="btn-secondary">
-                        <i class="fas fa-file-alt"></i> Apply Now
-                    </a>
+                    <h3>Receive Funds</h3>
+                    <p>Money in your account</p>
                 </div>
             </div>
         </div>
@@ -290,56 +91,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
-                        <i class="fas fa-bolt"></i> SwiftFund
-                    </a>
-                    <p class="footer-description">
-                        SwiftFund is revolutionizing digital lending with instant approvals, competitive rates, and a seamless customer experience.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#loans">Loan Types</a></li>
-                        <li><a href="#calculator">EMI Calculator</a></li>
-                        <li><a href="apply.html">Apply Now</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="disclaimer.html">Disclaimer</a></li>
-                        <li><a href="security.html">Security</a></li>
-                        <li><a href="complaints.html">Complaints</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> support@swiftfund.com</p>
-                        <p><i class="fas fa-phone"></i> (888) 555-SWIFT</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Financial District,<br>New York, NY 10001</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 SwiftFund. All rights reserved. SwiftFund is a registered trademark.</p>
-                <p class="footer-note">
-                    <i class="fas fa-shield-alt"></i> Your financial security is our top priority
-                </p>
-            </div>
+            <p>&copy; 2024 SwiftFund. All rights reserved.</p>
         </div>
     </footer>
 
