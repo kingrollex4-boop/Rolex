@@ -6,13 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('applicationModal');
     const closeModal = document.querySelector('.close-modal');
     
-    closeModal.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            if (modal) modal.style.display = 'none';
+        });
+    }
     
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) {
+    globalThis.addEventListener('click', function(event) {
+        if (event.target === modal) {
             modal.style.display = 'none';
+        }
+        
+        // Handle view button clicks
+        if (event.target.classList.contains('action-btn-view')) {
+            const index = parseInt(event.target.dataset.index);
+            viewApplication(index);
+        }
+        
+        // Handle approve button clicks
+        if (event.target.classList.contains('action-btn-approve')) {
+            const index = parseInt(event.target.dataset.index);
+            approveApplication(index);
         }
     });
 });
@@ -21,12 +35,18 @@ function loadApplications() {
     const applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
     
     // Update stats
-    document.getElementById('totalApplications').textContent = applications.length;
-    document.getElementById('pendingApplications').textContent = applications.filter(app => app.status === 'pending').length;
-    document.getElementById('approvedApplications').textContent = applications.filter(app => app.status === 'approved').length;
+    const totalEl = document.getElementById('totalApplications');
+    const pendingEl = document.getElementById('pendingApplications');
+    const approvedEl = document.getElementById('approvedApplications');
+    
+    if (totalEl) totalEl.textContent = applications.length;
+    if (pendingEl) pendingEl.textContent = applications.filter(app => app.status === 'pending').length;
+    if (approvedEl) approvedEl.textContent = applications.filter(app => app.status === 'approved').length;
     
     // Update table
     const tbody = document.getElementById('applicationsTableBody');
+    if (!tbody) return;
+    
     tbody.innerHTML = '';
     
     if (applications.length === 0) {
@@ -43,8 +63,8 @@ function loadApplications() {
             <td>$${app.loanAmount}</td>
             <td><span class="status-${app.status}">${app.status}</span></td>
             <td>
-                <button class="action-btn" onclick="viewApplication(${index})">View</button>
-                <button class="action-btn" onclick="approveApplication(${index})" ${app.status === 'approved' ? 'disabled' : ''}>Approve</button>
+                <button class="action-btn action-btn-view" data-index="${index}">View</button>
+                <button class="action-btn action-btn-approve" data-index="${index}" ${app.status === 'approved' ? 'disabled' : ''}>Approve</button>
             </td>
         `;
         tbody.appendChild(row);
@@ -56,6 +76,8 @@ function viewApplication(index) {
     const app = applications[index];
     
     const modalBody = document.getElementById('modalBody');
+    if (!modalBody) return;
+    
     modalBody.innerHTML = `
         <div class="application-details">
             <p><strong>Application ID:</strong> ${app.id}</p>
@@ -72,7 +94,10 @@ function viewApplication(index) {
         </div>
     `;
     
-    document.getElementById('applicationModal').style.display = 'flex';
+    const modal = document.getElementById('applicationModal');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
 }
 
 function approveApplication(index) {
