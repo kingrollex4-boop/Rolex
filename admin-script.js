@@ -6,27 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('applicationModal');
     const closeModal = document.querySelector('.close-modal');
     
-    if (closeModal) {
-        closeModal.addEventListener('click', function() {
-            if (modal) modal.style.display = 'none';
-        });
-    }
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
     
     globalThis.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
-        }
-        
-        // Handle view button clicks
-        if (event.target.classList.contains('action-btn-view')) {
-            const index = parseInt(event.target.dataset.index);
-            viewApplication(index);
-        }
-        
-        // Handle approve button clicks
-        if (event.target.classList.contains('action-btn-approve')) {
-            const index = parseInt(event.target.dataset.index);
-            approveApplication(index);
         }
     });
 });
@@ -63,15 +49,16 @@ function loadApplications() {
             <td>$${app.loanAmount}</td>
             <td><span class="status-${app.status}">${app.status}</span></td>
             <td>
-                <button class="action-btn action-btn-view" data-index="${index}">View</button>
-                <button class="action-btn action-btn-approve" data-index="${index}" ${app.status === 'approved' ? 'disabled' : ''}>Approve</button>
+                <button class="action-btn" onclick="viewApplicationHelper(${index})">View</button>
+                <button class="action-btn" onclick="approveApplicationHelper(${index})" ${app.status === 'approved' ? 'disabled' : ''}>Approve</button>
             </td>
         `;
         tbody.appendChild(row);
     });
 }
 
-function viewApplication(index) {
+// Make functions available globally for onclick handlers
+globalThis.viewApplicationHelper = function(index) {
     const applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
     const app = applications[index];
     
@@ -98,12 +85,12 @@ function viewApplication(index) {
     if (modal) {
         modal.style.display = 'flex';
     }
-}
+};
 
-function approveApplication(index) {
+globalThis.approveApplicationHelper = function(index) {
     const applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
     applications[index].status = 'approved';
     localStorage.setItem('loanApplications', JSON.stringify(applications));
     loadApplications();
     alert('Application approved!');
-}
+};
