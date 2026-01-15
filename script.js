@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission for localStorage
     const loanForm = document.getElementById('loanForm');
     if (loanForm) {
-        loanForm.addEventListener('submit', function(e) {
+        loanForm.addEventListener('submit', function(_event) {
             // Get form data
             const formData = {
                 id: 'APP-' + Date.now(),
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             // Save to localStorage
-            let applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
+            const applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
             applications.push(formData);
             localStorage.setItem('loanApplications', JSON.stringify(applications));
 
