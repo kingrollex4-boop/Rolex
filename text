@@ -1,0 +1,16 @@
+swiftfund-project/
+├── index.html              # Main landing page
+├── apply.html             # Comprehensive application form
+├── login.html            # User login page
+├── register.html         # User registration page
+├── user-dashboard.html   # User dashboard
+├── admin.html           # Admin dashboard
+├── admin-login.html     # Admin login
+├── style.css           # Main stylesheet
+├── admin-style.css     # Admin dashboard styles
+├── script.js          # Main JavaScript
+├── admin-script.js    # Admin dashboard JavaScript
+├── terms.html        # Terms & conditions
+├── privacy.html      # Privacy policy
+├── security.html     # Security information
+└── README.md        # Documentation
