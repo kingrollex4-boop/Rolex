@@ -1,37 +1,26 @@
-# SwiftFund Loan Application System
+# SwiftFund Loan Application Website
 
-## Features:
-1. Complete loan application form
-2. Admin dashboard to view applications
-3. Netlify Forms integration
-4. LocalStorage backup
+A complete loan application website with landing page, application form, and admin panel.
 
-## How to Use:
+## Features
+- Professional landing page with responsive design
+- Complete loan application form with validation
+- Admin panel to view submitted applications
+- Local storage for data persistence
+- Contact information: (305) 574-1900 | ohr62749@gmail.com
 
-### 1. For Users:
-- Go to `apply.html`
-- Fill out the form
-- Submit (saves to Netlify + localStorage)
+## Pages
+1. `index.html` - Landing page
+2. `apply.html` - Loan application form
+3. `admin.html` - Admin panel
 
-### 2. For Admin:
-- Go to `admin.html`
-- View all applications
-- Approve applications
-- See detailed information
+## How to Use
+1. Open `index.html` in browser
+2. Click "Apply Now" to access the application form
+3. Fill out the complete form with personal, loan, and banking details
+4. Submit the form - data saves to localStorage and sends email notification
+5. Access `admin.html` to view all submitted applications
 
-### 3. To Deploy on Netlify:
-
-#### Option A: Drag & Drop (Easiest)
-1. Create a folder on your computer
-2. Put ALL these files in the folder
-3. Go to https://app.netlify.com/
-4. Drag the folder into Netlify
-5. Done!
-
-#### Option B: GitHub
-1. Create GitHub repository
-2. Upload all files
-3. Connect to Netlify
-4. Deploy
-
-## File Structure:
+## Contact
+- Phone: (305) 574-1900
+- Email: ohr62749@gmail.com
