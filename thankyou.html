@@ -1,98 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thank You - Rapid Credit</title>
+    <title>Thank You - RapidCredit Elite</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0066ff, #00ccff);
-            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000080 0%, #0A0F2B 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0;
+            padding: 20px;
         }
-        .thank-you-box {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
+        .elite-thank {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px;
+            border-radius: 30px;
             text-align: center;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 3px solid #FFD700;
+            position: relative;
+            overflow: hidden;
         }
-        .success-icon {
-            font-size: 60px;
-            color: #00cc66;
-            margin-bottom: 20px;
+        .elite-thank::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #FFD700, #000080, #FFD700);
+        }
+        .elite-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: #000080;
+            font-size: 50px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         h1 {
-            color: #0066ff;
-            margin-bottom: 15px;
+            color: #000080;
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
-        .contact-box {
-            background: #f0f8ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
+        .elite-contact {
+            background: linear-gradient(135deg, #f0f4ff, #e8eeff);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 5px solid #FFD700;
         }
-        .contact-box p {
-            margin: 10px 0;
+        .elite-contact h3 {
+            color: #000080;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
             font-size: 18px;
         }
-        .btn {
-            display: inline-block;
-            background: #0066ff;
+        .contact-item i {
+            color: #FFD700;
+            font-size: 20px;
+        }
+        .elite-btn {
+            background: linear-gradient(135deg, #000080, #4169E1);
             color: white;
-            padding: 12px 30px;
+            padding: 20px 50px;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            font-weight: bold;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            margin: 20px;
+            transition: transform 0.3s;
         }
-        .btn:hover {
-            background: #0052cc;
-        }
-        .timer {
-            color: #666;
-            margin-top: 20px;
-            font-size: 14px;
+        .elite-btn:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
-    <div class="thank-you-box">
-        <div class="success-icon">✓</div>
-        <h1>Application Submitted!</h1>
-        <p>Thank you for choosing Rapid Credit.</p>
-        <p>Your application has been received and will be reviewed within 24 hours.</p>
+    <div class="elite-thank">
+        <div class="elite-icon">✓</div>
+        <h1>Elite Application Received</h1>
+        <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 30px;">
+            Thank you for your premium application. Our elite financing team will review 
+            your submission and contact you within 2 hours.
+        </p>
         
-        <div class="contact-box">
-            <h3>Need Immediate Assistance?</h3>
-            <p><strong>📞 Phone:</strong> +1 (305) 574-1900</p>
-            <p><strong>✉️ Email:</strong> kingrollex4@gmail.com</p>
+        <div class="elite-contact">
+            <h3><i class="fas fa-crown"></i> Elite Support</h3>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><strong>+1 (305) 574-1900</strong></span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span><strong>kingrollex4@gmail.com</strong></span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Priority Response: 2 Hours</span>
+            </div>
         </div>
         
-        <a href="index.html" class="btn">← Back to Homepage</a>
+        <a href="index.html" class="elite-btn">
+            <i class="fas fa-home"></i> Return to Elite Portal
+        </a>
         
-        <div class="timer">
-            <p>Redirecting to homepage in <span id="countdown">10</span> seconds...</p>
-        </div>
+        <p style="color: #888; margin-top: 30px; font-size: 14px;">
+            <i class="fas fa-shield-alt"></i> Secure & Confidential Processing
+        </p>
     </div>
-
-    <script>
-        // Countdown timer
-        let seconds = 10;
-        const countdownElement = document.getElementById('countdown');
-        
-        const timer = setInterval(() => {
-            seconds--;
-            countdownElement.textContent = seconds;
-            
-            if (seconds <= 0) {
-                clearInterval(timer);
-                window.location.href = 'index.html';
-            }
-        }, 1000);
-    </script>
 </body>
 </html>
