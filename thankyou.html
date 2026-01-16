@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Rapid Credit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="thank-you-page">
+        <div class="container">
+            <div class="thank-you-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <h1>Application Submitted Successfully!</h1>
+                
+                <div class="thank-you-message">
+                    <p>Thank you for choosing Rapid Credit. We have received your loan application.</p>
+                    
+                    <div class="next-steps">
+                        <h3>What Happens Next?</h3>
+                        <ol>
+                            <li>We'll review your application within 24 hours</li>
+                            <li>You'll receive a call at the number you provided</li>
+                            <li>If approved, funds will be deposited within 24-48 hours</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="contact-info-thankyou">
+                        <h3>Need Immediate Assistance?</h3>
+                        <p><i class="fas fa-phone"></i> Call us: <a href="tel:+13055741900">+1 (305) 574-1900</a></p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:kingrollex4@gmail.com">kingrollex4@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-home"></i> Return to Home
+                        </a>
+                        <a href="index.html#calculator" class="btn btn-secondary">
+                            <i class="fas fa-calculator"></i> Use Calculator
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .thank-you-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .thank-you-content {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            color: #4caf50;
+            margin-bottom: 30px;
+        }
+        
+        .thank-you-content h1 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .thank-you-message {
+            margin: 30px 0;
+        }
+        
+        .next-steps {
+            text-align: left;
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+        }
+        
+        .next-steps h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .next-steps ol {
+            padding-left: 20px;
+        }
+        
+        .next-steps li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        .contact-info-thankyou {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+        }
+        
+        .contact-info-thankyou h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .contact-info-thankyou p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .contact-info-thankyou a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-content {
+                padding: 30px 20px;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
