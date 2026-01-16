@@ -3,78 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | SwiftFund</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="admin-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>SwiftFund - Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #1a237e; color: white; }
+    </style>
 </head>
 <body>
-    <nav class="admin-navbar">
-        <div class="container">
-            <a href="index.html" class="logo">SwiftFund Admin</a>
-        </div>
-    </nav>
-
-    <div class="admin-container">
-        <main class="admin-main">
-            <h1>Loan Applications Dashboard</h1>
+    <h1>SwiftFund Admin Panel</h1>
+    <button onclick="loadApplications()">Load Applications</button>
+    <table id="applicationsTable">
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Loan Amount</th><th>Date</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <script>
+        function loadApplications() {
+            const applications = JSON.parse(localStorage.getItem('swiftfundApplications')) || [];
+            const tableBody = document.querySelector('#applicationsTable tbody');
+            tableBody.innerHTML = '';
             
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3 id="totalApplications">0</h3>
-                    <p>Total Applications</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="pendingApplications">0</h3>
-                    <p>Pending</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="approvedApplications">0</h3>
-                    <p>Approved</p>
-                </div>
-            </div>
-
-            <div class="applications-table">
-                <h2>All Applications</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Loan Amount</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="applicationsTableBody">
-                        <!-- Applications will appear here -->
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="admin-notes">
-                <h3><i class="fas fa-info-circle"></i> Important Notes:</h3>
-                <p>1. Applications are stored in your browser's localStorage</p>
-                <p>2. To see Netlify submissions, go to Netlify.com → Your Site → Forms</p>
-                <p>3. Click "View" to see full application details</p>
-            </div>
-        </main>
-    </div>
-
-    <!-- Modal for viewing details -->
-    <div id="applicationModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Application Details</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Details go here -->
-            </div>
-        </div>
-    </div>
-
-    <script src="admin-script.js"></script>
+            applications.forEach(app => {
+                const row = `<tr>
+                    <td>${app.applicationId}</td>
+                    <td>${app.fullName}</td>
+                    <td>${app.email}</td>
+                    <td>$${app.loanAmount}</td>
+                    <td>${app.timestamp}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+        
+        // Load applications on page load
+        document.addEventListener('DOMContentLoaded', loadApplications);
+    </script>
 </body>
 </html>
