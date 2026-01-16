@@ -3,34 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Lending | Fast Cash Loans Online</title>
+    <title>Quick Lending | Complete Loan System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== MODERN RESET & BASE STYLES ===== */
+        /* === COMPLETE SYSTEM STYLES === */
         :root {
             --primary: #0066ff;
             --primary-dark: #0052d4;
-            --secondary: #00d4aa;
-            --accent: #ff6b35;
-            --success: #00c896;
-            --warning: #ff9f43;
+            --secondary: #00c896;
             --danger: #ff4757;
+            --warning: #ff9f43;
+            --success: #00c896;
             --dark: #0f172a;
             --light: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-800: #1e293b;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, #009c7a 100%);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 102, 255, 0.1);
-            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 32px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gray: #64748b;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         * {
@@ -40,11 +30,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--light-bg);
             color: var(--dark);
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         .container {
@@ -54,931 +43,1041 @@
             padding: 0 20px;
         }
 
-        /* ===== TOP NOTIFICATION BAR ===== */
-        .notification-bar {
-            background: var(--dark);
-            color: white;
-            padding: 12px 0;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .notification-bar span {
-            background: var(--accent);
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-left: 10px;
-            font-weight: 600;
-        }
-
-        /* ===== HEADER & NAVIGATION ===== */
-        header {
+        /* === HEADER === */
+        .header {
             background: white;
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
         }
 
-        .header-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
         }
 
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-        }
-
-        .logo-text {
+        .logo i {
             font-size: 28px;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 30px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--dark);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            position: relative;
-            padding: 8px 0;
-            transition: var(--transition);
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-links a::after {
+        .btn {
+            padding: 10px 25px;
+            border-radius: var(--radius);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* === MULTI-STEP FORM === */
+        .form-container {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .form-progress:before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 15px;
             left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 3px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
             right: 0;
-            width: 60%;
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 0 0 0 200px;
-            z-index: -1;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: var(--gray-800);
-            margin-bottom: 32px;
-            max-width: 500px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin: 40px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 40px;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-        }
-
-        .stat-label {
-            color: var(--gray-800);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        /* ===== APPLICATION FORM ===== */
-        .application-form {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 50px;
-            box-shadow: var(--shadow-xl);
-            position: relative;
+            height: 2px;
+            background: var(--border);
             z-index: 1;
         }
 
-        .form-header {
-            text-align: center;
-            margin-bottom: 40px;
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
         }
 
-        .form-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--dark);
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--gray);
             margin-bottom: 10px;
         }
 
-        .form-header p {
-            color: var(--gray-800);
-            font-size: 16px;
+        .progress-step.active .step-circle {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-bottom: 30px;
+        .step-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-align: center;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-step.active {
+            display: block;
         }
 
         .form-group {
-            position: relative;
+            margin-bottom: 20px;
         }
 
-        .form-group.full-width {
-            grid-column: 1 / -1;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        .form-label {
+        label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark);
-            font-size: 14px;
         }
 
-        .form-label span {
+        label span {
             color: var(--danger);
         }
 
-        .form-control {
+        input, select, textarea {
             width: 100%;
-            padding: 16px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: var(--radius-md);
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
             font-size: 16px;
-            font-family: inherit;
-            transition: var(--transition);
-            background: white;
+            transition: all 0.3s;
         }
 
-        .form-control:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+            box-shadow: 0 0 0 3px rgba(0,102,255,0.1);
         }
 
-        .form-control.select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 20px center;
-            padding-right: 50px;
-        }
-
-        /* Amount Selector */
-        .amount-selector {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .amount-option {
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .amount-box {
-            background: white;
-            border: 2px solid #e2e8f0;
-            border-radius: var(--radius-md);
-            padding: 20px 10px;
-            transition: var(--transition);
-        }
-
-        .amount-box .amount {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--dark);
-            display: block;
-        }
-
-        .amount-box .label {
-            font-size: 12px;
-            color: var(--gray-800);
-            margin-top: 5px;
-        }
-
-        .amount-option:hover .amount-box {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .amount-option.active .amount-box {
-            background: var(--gradient);
-            border-color: transparent;
-            color: white;
-        }
-
-        .amount-option.active .amount,
-        .amount-option.active .label {
-            color: white;
-        }
-
-        /* Checkbox Styling */
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            border-radius: 6px;
-            border: 2px solid #e2e8f0;
-            appearance: none;
-            cursor: pointer;
-            position: relative;
-            transition: var(--transition);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .checkbox-group input[type="checkbox"]:checked {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .checkbox-group input[type="checkbox"]:checked::after {
-            content: '✓';
-            position: absolute;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .checkbox-group label {
-            font-size: 14px;
-            color: var(--gray-800);
-            line-height: 1.5;
-        }
-
-        .checkbox-group label a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .checkbox-group label a:hover {
-            text-decoration: underline;
-        }
-
-        /* Submit Button */
-        .submit-section {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .submit-btn {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 20px 60px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .security-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            color: var(--gray-800);
-            font-size: 14px;
-        }
-
-        .security-badge i {
-            color: var(--success);
-        }
-
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 42px;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--gray-800);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--gray-50);
-            border-radius: var(--radius-lg);
-            padding: 40px 30px;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            font-size: 30px;
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .feature-card p {
-            color: var(--gray-800);
-            font-size: 15px;
-        }
-
-        /* ===== CALCULATOR SECTION ===== */
-        .calculator {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--gray-50) 0%, #f0f9ff 100%);
-        }
-
-        .calculator-container {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 50px;
-            box-shadow: var(--shadow-xl);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .calculator-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .calc-group {
-            margin-bottom: 20px;
-        }
-
-        .calc-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .input-with-icon {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gray-800);
-            font-weight: 600;
-        }
-
-        .input-with-icon input {
-            padding-left: 35px;
-        }
-
-        input[type="range"] {
-            width: 100%;
-            height: 6px;
-            background: var(--gray-100);
-            border-radius: 3px;
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            cursor: pointer;
-        }
-
-        .calculator-results .result-card {
-            background: var(--gradient);
-            color: white;
-            padding: 25px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 20px;
-        }
-
-        .result-card h4 {
-            margin-bottom: 20px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .result-row {
+        .form-navigation {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
         }
 
-        .result-row.total {
-            font-weight: 700;
-            font-size: 18px;
-            border-bottom: none;
-            padding-top: 15px;
-            margin-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        /* === ADMIN DASHBOARD === */
+        .admin-container {
+            display: none;
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: var(--shadow);
         }
 
-        .result-row.highlight {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: var(--radius-md);
-            margin-top: 15px;
-            font-weight: 700;
-            color: #ffeb3b;
-        }
-
-        .warning-box {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 15px;
-            border-radius: var(--radius-md);
+        .dashboard-header {
             display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .warning-box i {
-            color: var(--warning);
-            margin-top: 2px;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .footer-contact p {
-            margin: 10px 0;
-            color: #94a3b8;
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
+        .applications-table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
         }
 
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
+        .applications-table th,
+        .applications-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .applications-table th {
+            background: var(--light-bg);
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
         }
 
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
+        .modal-content {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .footer-links h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: white;
+        /* === LOGIN PAGE === */
+        .login-container {
+            display: none;
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
         }
 
-        .footer-links ul {
-            list-style: none;
+        .login-form {
+            margin-top: 30px;
         }
 
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-bg {
-                display: none;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .calculator-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        /* === RESPONSIVE === */
         @media (max-width: 768px) {
-            .form-grid {
+            .form-row {
                 grid-template-columns: 1fr;
-            }
-            
-            .amount-selector {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .nav-links {
                 display: none;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
+            .applications-table {
+                display: block;
+                overflow-x: auto;
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-text h1 {
-                font-size: 42px;
-            }
-            
-            .stat-number {
-                font-size: 32px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .application-form {
-                padding: 30px 20px;
-            }
-            
-            .hero-text h1 {
-                font-size: 32px;
-            }
-            
-            .section-header h2 {
-                font-size: 32px;
-            }
-            
-            .submit-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .calculator-container {
-                padding: 30px 20px;
-            }
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-
-    <!-- Top Notification Bar -->
-    <div class="notification-bar">
-        <i class="fas fa-bolt"></i> INSTANT APPROVAL • SAME DAY FUNDING • <span>95% APPROVAL RATE</span>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">
+    <!-- Main Application Page -->
+    <div id="mainPage">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <a href="#" class="logo">
                     <i class="fas fa-bolt"></i>
-                </div>
-                <div class="logo-text">QuickLending</div>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#how">How It Works</a></li>
-                <li><a href="#calculator">Calculator</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <a href="#apply" class="cta-button">
-                <i class="fas fa-rocket"></i> APPLY NOW
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Get Instant Cash When You Need It Most</h1>
-                <p>Emergency expenses happen. Get up to $1,500 in your account within 24 hours. No hidden fees, no paperwork.</p>
+                    <span>Quick Lending</span>
+                </a>
                 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5 min</div>
-                        <div class="stat-label">Application</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Funding</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">$1,500</div>
-                        <div class="stat-label">Max Loan</div>
-                    </div>
-                </div>
-
-                <a href="#apply" class="cta-button floating">
-                    <i class="fas fa-arrow-right"></i> GET STARTED
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#apply">Apply Now</a></li>
+                    <li><a href="#admin" onclick="showAdminLogin()">Admin Login</a></li>
+                </ul>
+                
+                <a href="#apply" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Start Application
                 </a>
             </div>
+        </header>
 
-            <!-- Application Form -->
-            <div class="application-form" id="apply">
-                <div class="form-header">
-                    <h2>Apply Now</h2>
-                    <p>Fill out this quick form to get started</p>
+        <!-- Multi-Step Form -->
+        <div class="container">
+            <div class="form-container" id="applicationForm">
+                <div class="form-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <div class="step-label">Personal Info</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <div class="step-label">Financial Info</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <div class="step-label">Banking Info</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-circle">4</div>
+                        <div class="step-label">Review & Submit</div>
+                    </div>
                 </div>
 
-                <form id="loanApplicationForm" onsubmit="submitApplication(event)">
-                    <!-- Loan Amount -->
-                    <div class="form-group full-width">
-                        <label class="form-label">Loan Amount Needed <span>*</span></label>
-                        <div class="amount-selector">
-                            <div class="amount-option" data-amount="300">
-                                <div class="amount-box">
-                                    <span class="amount">$300</span>
-                                    <span class="label">Small</span>
-                                </div>
-                            </div>
-                            <div class="amount-option active" data-amount="500">
-                                <div class="amount-box">
-                                    <span class="amount">$500</span>
-                                    <span class="label">Popular</span>
-                                </div>
-                            </div>
-                            <div class="amount-option" data-amount="750">
-                                <div class="amount-box">
-                                    <span class="amount">$750</span>
-                                    <span class="label">Medium</span>
-                                </div>
-                            </div>
-                            <div class="amount-option" data-amount="1000">
-                                <div class="amount-box">
-                                    <span class="amount">$1,000</span>
-                                    <span class="label">Large</span>
-                                </div>
-                            </div>
-                            <div class="amount-option" data-amount="1500">
-                                <div class="amount-box">
-                                    <span class="amount">$1,500</span>
-                                    <span class="label">Maximum</span>
-                                </div>
-                            </div>
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <h2>Personal Information</h2>
+                    <p>Please provide your basic information</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name <span>*</span></label>
+                            <input type="text" id="firstName" placeholder="John" required>
                         </div>
-                        <input type="hidden" id="loanAmount" name="loan_amount" value="500" required>
+                        <div class="form-group">
+                            <label>Last Name <span>*</span></label>
+                            <input type="text" id="lastName" placeholder="Smith" required>
+                        </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address <span>*</span></label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number <span>*</span></label>
+                        <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Date of Birth <span>*</span></label>
+                        <input type="date" id="dob" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Social Security Number <span>*</span></label>
+                        <input type="text" id="ssn" placeholder="XXX-XX-XXXX" pattern="\d{3}-\d{2}-\d{4}" required>
+                        <small style="color: var(--gray); font-size: 12px; margin-top: 5px; display: block;">
+                            Format: 123-45-6789
+                        </small>
+                    </div>
+                </div>
 
-                    <!-- Personal Info -->
-                    <div class="form-grid">
+                <!-- Step 2: Financial Information -->
+                <div class="form-step" data-step="2">
+                    <h2>Financial Information</h2>
+                    <p>Tell us about your financial situation</p>
+                    
+                    <div class="form-group">
+                        <label>Loan Amount Needed <span>*</span></label>
+                        <select id="loanAmount" required>
+                            <option value="">Select Amount</option>
+                            <option value="300">$300</option>
+                            <option value="500">$500</option>
+                            <option value="1000">$1,000</option>
+                            <option value="1500">$1,500</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Loan Purpose <span>*</span></label>
+                        <select id="loanPurpose" required>
+                            <option value="">Select Purpose</option>
+                            <option value="emergency">Emergency Expense</option>
+                            <option value="medical">Medical Bills</option>
+                            <option value="car">Car Repair</option>
+                            <option value="rent">Rent Payment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">First Name <span>*</span></label>
-                            <input type="text" class="form-control" name="first_name" placeholder="John" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Last Name <span>*</span></label>
-                            <input type="text" class="form-control" name="last_name" placeholder="Smith" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Email <span>*</span></label>
-                            <input type="email" class="form-control" name="email" placeholder="john@example.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Phone <span>*</span></label>
-                            <input type="tel" class="form-control" name="phone" placeholder="(555) 123-4567" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">State <span>*</span></label>
-                            <select class="form-control select" name="state" required>
-                                <option value="">Select State</option>
-                                <option value="FL">Florida</option>
-                                <option value="CA">California</option>
-                                <option value="TX">Texas</option>
-                                <option value="NY">New York</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Monthly Income <span>*</span></label>
-                            <select class="form-control select" name="income" required>
+                            <label>Monthly Income <span>*</span></label>
+                            <select id="monthlyIncome" required>
                                 <option value="">Select Income</option>
                                 <option value="<1000">Under $1,000</option>
                                 <option value="1000-2000">$1,000 - $2,000</option>
                                 <option value="2000-3000">$2,000 - $3,000</option>
                                 <option value="3000-4000">$3,000 - $4,000</option>
-                                <option value=">4000">Over $4,000</div>
-                                
+                                <option value=">4000">Over $4,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Employment Status <span>*</span></label>
+                            <select id="employmentStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="employed">Employed Full-Time</option>
+                                <option value="part-time">Part-Time</option>
+                                <option value="self">Self-Employed</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Banking Information -->
+                <div class="form-step" data-step="3">
+                    <h2>Banking Information</h2>
+                    <p>We need this information for direct deposit</p>
+                    
+                    <div class="form-group">
+                        <label>Bank Name <span>*</span></label>
+                        <input type="text" id="bankName" placeholder="e.g., Chase, Bank of America" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Routing Number <span>*</span></label>
+                            <input type="text" id="routingNumber" placeholder="123456789" pattern="\d{9}" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Account Number <span>*</span></label>
+                            <input type="text" id="accountNumber" placeholder="Account Number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Account Type <span>*</span></label>
+                        <select id="accountType" required>
+                            <option value="">Select Type</option>
+                            <option value="checking">Checking Account</option>
+                            <option value="savings">Savings Account</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Months with Bank <span>*</span></label>
+                        <select id="monthsWithBank" required>
+                            <option value="">Select Duration</option>
+                            <option value="<6">Less than 6 months</option>
+                            <option value="6-12">6-12 months</option>
+                            <option value="1-2">1-2 years</option>
+                            <option value="2+">More than 2 years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Step 4: Review & Submit -->
+                <div class="form-step" data-step="4">
+                    <h2>Review Your Application</h2>
+                    <p>Please review all information before submitting</p>
+                    
+                    <div id="reviewContent" style="background: var(--light-bg); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <!-- Review content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="termsAgreement" required style="width: auto; margin-top: 3px;">
+                            <span>I agree to the <a href="#">Terms & Conditions</a> and confirm all information is accurate <span>*</span></span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="privacyAgreement" required style="width: auto; margin-top: 3px;">
+                            <span>I agree to the <a href="#">Privacy Policy</a> and authorize credit checks <span>*</span></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+                    <button type="button" class="btn" id="prevBtn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    
+                    <button type="button" class="btn btn-primary" id="nextBtn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <button type="button" class="btn btn-primary" id="submitBtn" style="display: none;">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <div class="login-container">
+            <h2 style="text-align: center; margin-bottom: 10px;">
+                <i class="fas fa-lock"></i> Admin Login
+            </h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 30px;">
+                Access the admin dashboard
+            </p>
+            
+            <form class="login-form" onsubmit="login(event)">
+                <div class="form-group">
+                    <label>Admin ID <span>*</span></label>
+                    <input type="text" id="adminId" placeholder="Enter admin ID" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Password <span>*</span></label>
+                    <input type="password" id="adminPassword" placeholder="Enter password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                
+                <p style="text-align: center; margin-top: 20px; color: var(--gray); font-size: 14px;">
+                    <a href="#" onclick="showMainPage()" style="color: var(--primary);">
+                        <i class="fas fa-arrow-left"></i> Back to Application
+                    </a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="container" id="adminDashboard">
+        <div class="admin-container">
+            <div class="dashboard-header">
+                <div>
+                    <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
+                    <p style="color: var(--gray);">Manage loan applications</p>
+                </div>
+                
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn" onclick="showMainPage()">
+                        <i class="fas fa-home"></i> Back to Site
+                    </button>
+                    <button class="btn btn-primary" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="margin-bottom: 20px;">Recent Applications</h3>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button class="btn" onclick="filterApplications('all')">All</button>
+                    <button class="btn" onclick="filterApplications('pending')">Pending</button>
+                    <button class="btn" onclick="filterApplications('approved')">Approved</button>
+                    <button class="btn" onclick="filterApplications('rejected')">Rejected</button>
+                </div>
+                
+                <table class="applications-table" id="applicationsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Loan Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Applications will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Detail Modal -->
+    <div class="modal" id="applicationModal">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3>Application Details</h3>
+                <button onclick="closeModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--gray);">
+                    &times;
+                </button>
+            </div>
+            
+            <div id="modalContent">
+                <!-- Application details will be populated by JavaScript -->
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 30px; justify-content: flex-end;">
+                <button class="btn" onclick="closeModal()">Close</button>
+                <button class="btn btn-primary" onclick="approveApplication()">Approve</button>
+                <button class="btn" style="background: var(--danger); color: white;" onclick="rejectApplication()">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== APPLICATION DATA STORAGE =====
+        let applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
+        let currentApplication = {};
+        let currentStep = 1;
+        let selectedApplicationId = null;
+
+        // ===== FORM NAVIGATION =====
+        function updateProgressSteps() {
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                if (index + 1 === currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(formStep => {
+                formStep.classList.remove('active');
+                if (parseInt(formStep.dataset.step) === step) {
+                    formStep.classList.add('active');
+                }
+            });
+            
+            currentStep = step;
+            updateProgressSteps();
+            
+            // Update button visibility
+            document.getElementById('prevBtn').style.display = step === 1 ? 'none' : 'inline-flex';
+            document.getElementById('nextBtn').style.display = step === 4 ? 'none' : 'inline-flex';
+            document.getElementById('submitBtn').style.display = step === 4 ? 'inline-flex' : 'none';
+        }
+
+        // ===== FORM VALIDATION =====
+        function validateStep(step) {
+            let isValid = true;
+            
+            if (step === 1) {
+                const required = ['firstName', 'lastName', 'email', 'phone', 'dob', 'ssn'];
+                required.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (!element.value.trim()) {
+                        isValid = false;
+                        element.style.borderColor = 'var(--danger)';
+                    } else {
+                        element.style.borderColor = '';
+                    }
+                });
+            } else if (step === 2) {
+                const required = ['loanAmount', 'loanPurpose', 'monthlyIncome', 'employmentStatus'];
+                required.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (!element.value) {
+                        isValid = false;
+                        element.style.borderColor = 'var(--danger)';
+                    } else {
+                        element.style.borderColor = '';
+                    }
+                });
+            } else if (step === 3) {
+                const required = ['bankName', 'routingNumber', 'accountNumber', 'accountType', 'monthsWithBank'];
+                required.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (!element.value) {
+                        isValid = false;
+                        element.style.borderColor = 'var(--danger)';
+                    } else {
+                        element.style.borderColor = '';
+                    }
+                });
+            }
+            
+            return isValid;
+        }
+
+        // ===== SAVE APPLICATION DATA =====
+        function saveStepData(step) {
+            if (step === 1) {
+                currentApplication.personal = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    dob: document.getElementById('dob').value,
+                    ssn: document.getElementById('ssn').value
+                };
+            } else if (step === 2) {
+                currentApplication.financial = {
+                    loanAmount: document.getElementById('loanAmount').value,
+                    loanPurpose: document.getElementById('loanPurpose').value,
+                    monthlyIncome: document.getElementById('monthlyIncome').value,
+                    employmentStatus: document.getElementById('employmentStatus').value
+                };
+            } else if (step === 3) {
+                currentApplication.banking = {
+                    bankName: document.getElementById('bankName').value,
+                    routingNumber: document.getElementById('routingNumber').value,
+                    accountNumber: document.getElementById('accountNumber').value,
+                    accountType: document.getElementById('accountType').value,
+                    monthsWithBank: document.getElementById('monthsWithBank').value
+                };
+            }
+        }
+
+        // ===== PREVIEW APPLICATION =====
+        function previewApplication() {
+            const reviewDiv = document.getElementById('reviewContent');
+            reviewDiv.innerHTML = `
+                <h3 style="margin-bottom: 15px;">Application Summary</h3>
+                
+                <h4 style="margin-top: 20px; color: var(--primary);">Personal Information</h4>
+                <p><strong>Name:</strong> ${currentApplication.personal.firstName} ${currentApplication.personal.lastName}</p>
+                <p><strong>Email:</strong> ${currentApplication.personal.email}</p>
+                <p><strong>Phone:</strong> ${currentApplication.personal.phone}</p>
+                <p><strong>Date of Birth:</strong> ${currentApplication.personal.dob}</p>
+                <p><strong>SSN:</strong> ${currentApplication.personal.ssn}</p>
+                
+                <h4 style="margin-top: 20px; color: var(--primary);">Financial Information</h4>
+                <p><strong>Loan Amount:</strong> $${currentApplication.financial.loanAmount}</p>
+                <p><strong>Purpose:</strong> ${currentApplication.financial.loanPurpose}</p>
+                <p><strong>Monthly Income:</strong> ${currentApplication.financial.monthlyIncome}</p>
+                <p><strong>Employment:</strong> ${currentApplication.financial.employmentStatus}</p>
+                
+                <h4 style="margin-top: 20px; color: var(--primary);">Banking Information</h4>
+                <p><strong>Bank:</strong> ${currentApplication.banking.bankName}</p>
+                <p><strong>Account Type:</strong> ${currentApplication.banking.accountType}</p>
+                <p><strong>Routing #:</strong> ${currentApplication.banking.routingNumber}</p>
+                <p><strong>Account #:</strong> ${currentApplication.banking.accountNumber}</p>
+                <p><strong>Customer Since:</strong> ${currentApplication.banking.monthsWithBank}</p>
+                
+                <div style="background: #e8f4f8; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <p style="color: var(--primary); margin: 0;">
+                        <i class="fas fa-info-circle"></i> Your information is secure and encrypted.
+                    </p>
+                </div>
+            `;
+        }
+
+        // ===== SUBMIT APPLICATION =====
+        function submitApplication() {
+            if (!document.getElementById('termsAgreement').checked || !document.getElementById('privacyAgreement').checked) {
+                alert('Please agree to the terms and privacy policy');
+                return;
+            }
+            
+            // Create complete application object
+            const application = {
+                id: 'APP' + Date.now(),
+                ...currentApplication.personal,
+                ...currentApplication.financial,
+                ...currentApplication.banking,
+                date: new Date().toLocaleString(),
+                status: 'pending',
+                notes: ''
+            };
+            
+            // Save to localStorage
+            applications.push(application);
+            localStorage.setItem('loanApplications', JSON.stringify(applications));
+            
+            // Send email (simulated)
+            const emailBody = `
+                NEW LOAN APPLICATION - ${application.id}
+                
+                Personal Information:
+                --------------------
+                Name: ${application.firstName} ${application.lastName}
+                Email: ${application.email}
+                Phone: ${application.phone}
+                DOB: ${application.dob}
+                SSN: ${application.ssn}
+                
+                Financial Information:
+                ---------------------
+                Loan Amount: $${application.loanAmount}
+                Purpose: ${application.loanPurpose}
+                Monthly Income: ${application.monthlyIncome}
+                Employment: ${application.employmentStatus}
+                
+                Banking Information:
+                --------------------
+                Bank: ${application.bankName}
+                Account Type: ${application.accountType}
+                Routing #: ${application.routingNumber}
+                Account #: ${application.accountNumber}
+                Customer Since: ${application.monthsWithBank}
+                
+                Application Details:
+                --------------------
+                Application ID: ${application.id}
+                Submitted: ${application.date}
+                Status: ${application.status}
+            `;
+            
+            const subject = encodeURIComponent(`Loan Application - ${application.firstName} ${application.lastName} - $${application.loanAmount}`);
+            const body = encodeURIComponent(emailBody);
+            
+            window.location.href = `mailto:kingrollex4@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            alert(`✅ Application Submitted!\n\nYour Application ID: ${application.id}\n\nWe'll contact you within 24 hours.\n\nAn email has been opened with your application details. Please click SEND.`);
+            
+            // Reset form
+            resetForm();
+            showStep(1);
+        }
+
+        // ===== RESET FORM =====
+        function resetForm() {
+            document.querySelectorAll('input, select').forEach(element => {
+                if (element.type !== 'button' && element.type !== 'submit') {
+                    element.value = '';
+                }
+            });
+            
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            currentApplication = {};
+        }
+
+        // ===== ADMIN FUNCTIONS =====
+        function showAdminLogin() {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.getElementById('loginPage').style.display = 'block';
+        }
+
+        function showMainPage() {
+            document.getElementById('mainPage').style.display = 'block';
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.getElementById('loginPage').style.display = 'none';
+        }
+
+        function login(event) {
+            event.preventDefault();
+            
+            const adminId = document.getElementById('adminId').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Default admin credentials (change these in production)
+            if (adminId === 'admin' && password === 'admin123') {
+                document.getElementById('mainPage').style.display = 'none';
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                
+                // Load applications
+                loadApplications();
+            } else {
+                alert('Invalid admin credentials');
+            }
+        }
+
+        function logout() {
+            showMainPage();
+        }
+
+        function loadApplications() {
+            applications = JSON.parse(localStorage.getItem('loanApplications')) || [];
+            const tbody = document.querySelector('#applicationsTable tbody');
+            tbody.innerHTML = '';
+            
+            applications.forEach((app, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${app.id}</td>
+                    <td>${app.firstName} ${app.lastName}</td>
+                    <td>${app.email}</td>
+                    <td>$${app.loanAmount}</td>
+                    <td>${app.date}</td>
+                    <td><span class="status-badge status-${app.status}">${app.status}</span></td>
+                    <td>
+                        <button class="btn" onclick="viewApplication(${index})" style="padding: 5px 10px; font-size: 12px;">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function viewApplication(index) {
+            const app = applications[index];
+            selectedApplicationId = index;
+            
+            document.getElementById('modalContent').innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4>Personal Information</h4>
+                        <p><strong>Name:</strong> ${app.firstName} ${app.lastName}</p>
+                        <p><strong>Email:</strong> ${app.email}</p>
+                        <p><strong>Phone:</strong> ${app.phone}</p>
+                        <p><strong>DOB:</strong> ${app.dob}</p>
+                        <p><strong>SSN:</strong> ${app.ssn}</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Financial Information</h4>
+                        <p><strong>Loan Amount:</strong> $${app.loanAmount}</p>
+                        <p><strong>Purpose:</strong> ${app.loanPurpose}</p>
+                        <p><strong>Income:</strong> ${app.monthlyIncome}</p>
+                        <p><strong>Employment:</strong> ${app.employmentStatus}</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Banking Information</h4>
+                        <p><strong>Bank:</strong> ${app.bankName}</p>
+                        <p><strong>Account Type:</strong> ${app.accountType}</p>
+                        <p><strong>Routing #:</strong> ${app.routingNumber}</p>
+                        <p><strong>Account #:</strong> ${app.accountNumber}</p>
+                        <p><strong>Customer Since:</strong> ${app.monthsWithBank}</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Application Details</h4>
+                        <p><strong>Application ID:</strong> ${app.id}</p>
+                        <p><strong>Submitted:</strong> ${app.date}</p>
+                        <p><strong>Status:</strong> ${app.status}</p>
+                        ${app.notes ? `<p><strong>Notes:</strong> ${app.notes}</p>` : ''}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('applicationModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('applicationModal').style.display = 'none';
+        }
+
+        function approveApplication() {
+            if (selectedApplicationId !== null) {
+                applications[selectedApplicationId].status = 'approved';
+                applications[selectedApplicationId].notes = 'Application approved by admin on ' + new Date().toLocaleString();
+                localStorage.setItem('loanApplications', JSON.stringify(applications));
+                loadApplications();
+                closeModal();
+                alert('Application approved successfully');
+            }
+        }
+
+        function rejectApplication() {
+            if (selectedApplicationId !== null) {
+                applications[selectedApplicationId].status = 'rejected';
+                applications[selectedApplicationId].notes = 'Application rejected by admin on ' + new Date().toLocaleString();
+                localStorage.setItem('loanApplications', JSON.stringify(applications));
+                loadApplications();
+                closeModal();
+                alert('Application rejected');
+            }
+        }
+
+        function filterApplications(status) {
+            const rows = document.querySelectorAll('#applicationsTable tbody tr');
+            rows.forEach(row => {
+                const statusCell = row.querySelector('.status-badge');
+                if (status === 'all' || statusCell.classList.contains(`status-${status}`)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // ===== INITIALIZE =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Next button click
+            document.getElementById('nextBtn').addEventListener('click', function() {
+                if (validateStep(currentStep)) {
+                    saveStepData(currentStep);
+                    if (currentStep < 4) {
+                        showStep(currentStep + 1);
+                        if (currentStep + 1 === 4) {
+                            previewApplication();
+                        }
+                    }
+                } else {
+                    alert('Please fill all required fields');
+                }
+            });
+            
+            // Previous button click
+            document.getElementById('prevBtn').addEventListener('click', function() {
+                if (currentStep > 1) {
+                    showStep(currentStep - 1);
+                }
+            });
+            
+            // Submit button click
+            document.getElementById('submitBtn').addEventListener('click', submitApplication);
+            
+            // Initialize
+            showMainPage();
+        });
+    </script>
+</body>
+</html>
