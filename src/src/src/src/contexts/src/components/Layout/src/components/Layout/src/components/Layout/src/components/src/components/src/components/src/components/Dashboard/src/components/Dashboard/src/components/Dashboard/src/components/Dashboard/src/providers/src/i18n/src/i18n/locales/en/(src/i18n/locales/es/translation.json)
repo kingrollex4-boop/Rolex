@@ -1,0 +1,32 @@
+{
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "search": "Buscar",
+    "loading": "Cargando..."
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "users": "Usuarios",
+    "products": "Productos",
+    "analytics": "Analíticas",
+    "settings": "Ajustes",
+    "profile": "Perfil",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión"
+  },
+  "dashboard": {
+    "title": "Panel de control",
+    "welcome": "Bienvenido de nuevo",
+    "totalRevenue": "Ingresos totales",
+    "totalUsers": "Usuarios totales",
+    "totalOrders": "Pedidos totales",
+    "conversionRate": "Tasa de conversión",
+    "revenueOverview": "Resumen de ingresos",
+    "recentActivity": "Actividad reciente",
+    "chartPlaceholder": "El gráfico se renderizaría aquí"
+  }
+}
