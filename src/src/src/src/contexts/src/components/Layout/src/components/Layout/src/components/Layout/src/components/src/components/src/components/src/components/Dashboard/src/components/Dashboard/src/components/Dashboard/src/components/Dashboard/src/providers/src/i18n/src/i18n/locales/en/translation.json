@@ -1,0 +1,47 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "products": "Products",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "totalRevenue": "Total Revenue",
+    "totalUsers": "Total Users",
+    "totalOrders": "Total Orders",
+    "conversionRate": "Conversion Rate",
+    "revenueOverview": "Revenue Overview",
+    "recentActivity": "Recent Activity",
+    "chartPlaceholder": "Chart would be rendered here"
+  },
+  "users": {
+    "title": "User Management",
+    "addUser": "Add New User",
+    "searchPlaceholder": "Search users..."
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "email": "Email address",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "signIn": "Sign in",
+      "noAccount": "Don't have an account?"
+    }
+  }
+}
